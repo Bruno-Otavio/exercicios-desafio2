@@ -1,3 +1,3 @@
 # Acitvities
 ---
-## Repositório com Códigos e Exercícios do SENAI C e HTML
+## Repositório com Códigos e Exercícios do SENAI em C e HTML
