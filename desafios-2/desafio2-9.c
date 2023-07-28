@@ -13,7 +13,7 @@ int main() {
     fgets(commodityName, sizeof(commodityName), stdin);
 
     float price;
-    printf("Digite o valor deste produto: ");
+    printf("Digite o valor deste produto: R$");
     scanf("%f", &price);
 
     float newPrice = (price * percentual / 100) + price;

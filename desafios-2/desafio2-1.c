@@ -19,7 +19,7 @@ int main() {
 
     float result = (firstValue + secondValue) / thirdValue;
 
-    printf("A soma de %d e %d divida por %d e igual a %f", firstValue, secondValue, thirdValue, result);
+    printf("A soma de %d e %d divida por %d e igual a %.2f", firstValue, secondValue, thirdValue, result);
 
     return 0;
 }

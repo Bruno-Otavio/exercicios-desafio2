@@ -7,14 +7,14 @@
 */
 
 int main() {
-    const int PLANESPEED = 900;
-    int distance;
+    const int PLANESPEED = 900; // 900 km/h
+    float distance;
     printf("Digite a distancia a ser percorrida pelo aviao: ");
-    scanf("%d", &distance);
+    scanf("%f", &distance);
 
-    int timeHours = distance / PLANESPEED;
+    float timeHours = distance / PLANESPEED;
 
-    printf("O aviao ira percorrer uma distancia de %dkm em aproximadamente %d hora(s).", distance, timeHours);
+    printf("O aviao ira percorrer uma distancia de %.2fkm em aproximadamente %.2f hora(s).", distance, timeHours);
 
     return 0;
 }

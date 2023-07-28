@@ -21,7 +21,7 @@ int main() {
 
     int totalPoints = numVictory * 3 + numDraw;
 
-    printf("O time %s\nEsta com %d vitorias e %d empatas resultando em %d pontos.", clubName, numVictory, numDraw, totalPoints);
+    printf("O time %sEsta com %d vitorias e %d empates resultando em %d pontos.", clubName, numVictory, numDraw, totalPoints);
 
     return 0;
 }

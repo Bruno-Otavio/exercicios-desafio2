@@ -21,7 +21,7 @@ int main() {
 
     int totalTravel = (FARMPRODUCTION * numFarm) / (TRUCKCARGO * numTruck);
 
-    printf("Sera necessario %d viagens de %d caminhoes para transportar todas as laranjas.", totalTravel, numTruck);
+    printf("Sera necessario aproximadamente %d viagens de %d caminhoes para transportar todas as laranjas.", totalTravel, numTruck);
 
     return 0;
 }

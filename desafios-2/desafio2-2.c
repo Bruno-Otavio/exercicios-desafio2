@@ -6,16 +6,16 @@
 */
 
 int main() {
-    int speed;
+    float speed;
     printf("Digite um valor inteiro da média de velocidade de um carro: ");
-    scanf("%d", &speed);
+    scanf("%f", &speed);
 
-    int distance;
+    fint distance;
     printf("Digite um valor inteiro da distancia a ser percorrida por esse mesmo carro: ");
-    scanf("%d", &distance);
+    scanf("%f", &distance);
 
-    int time = distance / speed;
-    printf("O carro a %dkm/h precisara de %d horas aproximadamente para percorrer %dkm.", speed, time, distance);
+    float time = distance / speed;
+    printf("O carro a %.2fkm/h precisara de %.2f horas aproximadamente para percorrer %.2fkm.", speed, time, distance);
 
     return 0;
 }
