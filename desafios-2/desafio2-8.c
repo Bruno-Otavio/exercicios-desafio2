@@ -8,13 +8,13 @@
 int main() {
     const float PI = 3.14;
 
-    int raio;
+    float raio;
     printf("Digite o raio do cilindro em centimetros: ");
-    scanf("%d", &raio);
+    scanf("%f", &raio);
 
-    int altura;
+    float altura;
     printf("Digite a altura do mesmo cilindro em centimetros: ");
-    scanf("%d", &altura);
+    scanf("%f", &altura);
 
     float area = 2 * PI * raio * (raio + altura);
     float volume = PI * (raio * raio) * altura;
