@@ -16,7 +16,7 @@ int main() {
     printf("Digite a altura do mesmo cilindro em centimetros: ");
     scanf("%d", &altura);
 
-    float area = 2 * PI * raio * altura;
+    float area = 2 * PI * raio * (raio + altura);
     float volume = PI * (raio * raio) * altura;
 
     printf("A area do cilindro informado e de %.2f cm2.\n", area);
