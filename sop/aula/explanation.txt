@@ -1,0 +1,3 @@
+use the command :%s to replace existing word
+example: :%s/exemplo/comida
+the example above will replace all the word "exemplo" to "comida"

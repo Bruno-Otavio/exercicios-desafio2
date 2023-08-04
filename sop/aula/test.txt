@@ -1,0 +1,2 @@
+test test test test test
+!bash to go to the console without exiting the VI, to return type exit.
