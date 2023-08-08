@@ -20,6 +20,7 @@ int main() {
 
     int ordpos;
 	while (ordpos < n){
+		i = 0;
         for (i = 0; i < n; i++) {
             if (numArray[i] < min && numArray != 0) {
                 min = numArray[i];

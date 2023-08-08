@@ -6,41 +6,41 @@
 */
 
 int main() {
-	int numArray[5];
-	int n = sizeof(numArray) / sizeof(numArray[0]);
-
-	int i, r;
+	int numArr[5], order[5];
+	int n = sizeof(numArr) / sizeof(numArr[0]);
+	int i, iniPos, delPos, tempValue;
+	
 	for (i = 0; i < n; i++) {
 		printf("Digite o %d valor: ", i+1);
-		scanf("%d", &numArray[i]);
+		scanf("%d", &numArr[i]);
 	}
 
-	int min = numArray[0];
-	int order[5];
+	int min = numArr[0];
 
-	int ordpos;
-	int delPos;
-	for (ordpos = 0; ordpos < n; ordpos++) {
-		printf("\nnumArray[%d]: %d \n", ordpos, numArray[ordpos]);
+	for (iniPos = 0; iniPos < n; iniPos++) {
+		for (i = iniPos; i < n - iniPos; i++) {
+		    if (numArr[i] < min) {
+		        min = numArr[i];
+		        delPos = i;
+		        printf("\ni: %d", i);
+		    }
+		}
+		tempValue = numArr[iniPos];
+		numArr[iniPos] = min;
+		numArr[delPos] = tempValue;
+		
 		for (i = 0; i < n; i++) {
-			if (numArray[i] < min && numArray[i] != 0)
-				min = numArray[i];
-				delPos = i;
+			printf("\nnumArr: %d ", numArr[i]);
 		}
-
-		order[ordpos] = min;
-		printf("order[%d]: %d \n", ordpos, order[ordpos]);
-		printf("delpos: %d \n", delPos);
-
-		for (r = delPos; r < n - (ordpos + 1); r++) {
-			numArray[r] = numArray[r+1];
-			printf("posProc, numArray[%d]: %d \n", i, numArray[i]);
-		}
+		
+		printf("\ntempValue: %d", tempValue);
+		printf("\nnumArr[%d]: %d", iniPos, numArr[iniPos]);
+		printf("\nantiga posicao numArr[%d]: %d", delPos, numArr[delPos]);
 	}
-
+	
 	for (i = 0; i < n; i++) {
-		printf("\n%d ", order[i]);
+		printf("\nnumArr: %d ", numArr[i]);
 	}
-
+	
     return 0;
 }
