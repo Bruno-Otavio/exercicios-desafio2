@@ -1,0 +1,50 @@
+'<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form style="font-family: Verdana; line-height: 2">
+        <h1>MANUTENÇÃO DE USUÁRIOS DO SITEMA INTERNO</h1>
+
+        <label>Login: </label>
+        <input type="text"> <br/>
+
+        <label>Senha: </label>
+        <input type="password"> <br/>
+
+        <label>Status: </label>
+        <select name="Status">
+            <option value="inativo" selected>Inativo</option>
+        </select> <br/>
+
+        <label>Tipo</label>
+        <input type="radio" name="tipo" value="Tc">Técnico
+        <input type="radio" name="tipo" value="Pr">Professor
+        <input type="radio" name="tipo" value="al">Aluno <br/>
+
+        <label>Data Criação: </label>
+        <input type="date"> <br/>
+
+        <label>Perfil: </label>
+        <input type="radio" name="perfil" value="C">Convidado 
+        <input type="radio" name="perfil" value="Adm">Administrador <br/>
+
+        <label>Observações: </label>
+        <textarea name="oberservacoes" style="resize: none"></textarea> <br/>
+
+        <label>Módulos: </label>
+        <input type="checkbox" name="modulos" value="Compras">Compras
+        <input type="checkbox" name="modulos" value="Biblioteca">Biblioteca
+        <input type="checkbox" name="modulos" value="Amademico">Acadêmico
+        <input type="checkbox" name="modulos" value="Documentacao">Documentação
+        <input type="checkbox" name="modulos" value="RH">Recursos Humanos <br/>
+
+        <input type="submit" value="Cadastrar">
+        <input type="reset" value="Excluir">
+    </form>
+</body>
+</html>
