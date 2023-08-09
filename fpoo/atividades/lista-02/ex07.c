@@ -8,8 +8,8 @@
 int main() {
 	int numArr[5], order[5];
 	int n = sizeof(numArr) / sizeof(numArr[0]);
-	int i, iniPos, delPos, tempValue;
-	
+	int i, iniPos, minPos, tempValue;
+
 	for (i = 0; i < n; i++) {
 		printf("Digite o %d valor: ", i+1);
 		scanf("%d", &numArr[i]);
@@ -18,29 +18,22 @@ int main() {
 	int min = numArr[0];
 
 	for (iniPos = 0; iniPos < n; iniPos++) {
-		for (i = iniPos; i < n - iniPos; i++) {
+        min = numArr[iniPos];
+        minPos = iniPos;
+		for (i = iniPos + 1; i < n; i++) {
 		    if (numArr[i] < min) {
 		        min = numArr[i];
-		        delPos = i;
-		        printf("\ni: %d", i);
+		        minPos = i;
 		    }
 		}
 		tempValue = numArr[iniPos];
-		numArr[iniPos] = min;
-		numArr[delPos] = tempValue;
-		
-		for (i = 0; i < n; i++) {
-			printf("\nnumArr: %d ", numArr[i]);
-		}
-		
-		printf("\ntempValue: %d", tempValue);
-		printf("\nnumArr[%d]: %d", iniPos, numArr[iniPos]);
-		printf("\nantiga posicao numArr[%d]: %d", delPos, numArr[delPos]);
+        numArr[iniPos] = numArr[minPos];
+        numArr[minPos] = tempValue;
 	}
-	
+
 	for (i = 0; i < n; i++) {
 		printf("\nnumArr: %d ", numArr[i]);
 	}
-	
+
     return 0;
 }
