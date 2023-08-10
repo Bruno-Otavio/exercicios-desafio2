@@ -1,0 +1,60 @@
+'<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-family: Verdana; line-height: 2">
+    
+    <h1>Formulário</h1>
+
+    <form>
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+
+            <label>Nome: </label>
+            <input type="text"> <br/>
+
+            <label>Endereço: </label>
+            <input type="text"> <br/>
+
+            <label>Cidade: </label>
+            <input type="text"> <br/>
+
+            <label>Estado: </label>
+            <select name="estado">
+                <option value="sao-paulo">São Paulo</option>
+                <option value="rio-de-janeiro">Rio de Janeiro</option>
+                <option value="minas-gerais">Minas Gerais</option>
+                <option value="bahia">Bahia</option>
+                <option value="Pernambuco">Pernambuco</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Dados Profissionais</legend>
+
+            <label>Natureza do Cargo</label> <br/>
+            <input type="radio" name="cargo" value="gerencia">Gerência
+            <input type="radio" name="cargo" value="finacia">Financeiro
+            <input type="radio" name="cargo" value="recepcao">Recepção
+            <input type="radio" name="cargo" value="adm">Administrativo
+            <input type="radio" name="cargo" value="juridico">Jurídico <br/>
+
+            <label>Área de Interesse</label> <br/>
+            <input type="checkbox" name="interesse" value="compt">Computação
+            <input type="checkbox" name="interesse" value="biol">Biologia
+            <input type="checkbox" name="interesse" value="amb">Meio Ambiente
+            <input type="checkbox" name="interesse" value="enge">Engenharia
+            <input type="checkbox" name="interesse" value="hist">Hisória <br/>
+
+            <label>Mini Currículo</label>
+            <textare name="curriculo" style="resize: none"></textare>
+        </fieldset>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpar">
+    </form>
+
+</body>
+</html>
