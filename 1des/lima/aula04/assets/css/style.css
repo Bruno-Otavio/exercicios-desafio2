@@ -1,0 +1,14 @@
+body{
+    background-image: url(../img/steampunk.avif);
+    background-size: cover;
+}
+h1{
+    text-align: center;
+    font-size: 40px;
+}
+.bodyt1{
+    color: blue;
+}
+#bodyt2{
+    color: red;
+}
