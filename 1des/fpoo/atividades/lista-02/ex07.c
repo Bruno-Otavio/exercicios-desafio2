@@ -1,39 +1,98 @@
 #include <stdio.h>
 
-/*
-    Escreva um programa que leia 5 números inteiros em qualquer ordem
-    e exiba na tela ao final, os cinco números em ordem crescente.
-*/
+int main()
+{
+    int a, b, c, d, e;
+    int aux;
 
-int main() {
-	int numArr[5];
-	int n = sizeof(numArr) / sizeof(numArr[0]);
-	int i, iniPos, minPos, tempValue;
+    printf("Digite 5 numeros separados por espaços: ");
+    scanf("%d %d %d %d %d", &a, &b, &c, &d, &e);
 
-	for (i = 0; i < n; i++) {
-		printf("Digite o %d valor: ", i+1);
-		scanf("%d", &numArr[i]);
-	}
+    if (a > b) {
+        aux = a;
+        a = b;
+        b = aux;
+    }
+    if (b > c) {
+        aux = b;
+        b = c;
+        c = aux;
+    }
+    if (c > d) {
+        aux = c;
+        c = d;
+        d = aux;
+    }
+    if (d > e) {
+        aux = d;
+        d = e;
+        e = aux;
+    }
 
-	int min;
+    if (a > b) {
+        aux = a;
+        a = b;
+        b = aux;
+    }
+    if (b > c) {
+        aux = b;
+        b = c;
+        c = aux;
+    }
+    if (c > d) {
+        aux = c;
+        c = d;
+        d = aux;
+    }
+    if (d > e) {
+        aux = d;
+        d = e;
+        e = aux;
+    }
 
-	for (iniPos = 0; iniPos < n; iniPos++) {
-        min = numArr[iniPos];
-        minPos = iniPos;
-		for (i = iniPos + 1; i < n; i++) {
-		    if (numArr[i] < min) {
-		        min = numArr[i];
-		        minPos = i;
-		    }
-		}
-		tempValue = numArr[iniPos];
-        numArr[iniPos] = min;
-        numArr[minPos] = tempValue;
-	}
+    if (a > b) {
+        aux = a;
+        a = b;
+        b = aux;
+    }
+    if (b > c) {
+        aux = b;
+        b = c;
+        c = aux;
+    }
+    if (c > d) {
+        aux = c;
+        c = d;
+        d = aux;
+    }
+    if (d > e) {
+        aux = d;
+        d = e;
+        e = aux;
+    }
 
-	for (i = 0; i < n; i++) {
-		printf("\nnumArr: %d ", numArr[i]);
-	}
+    if (a > b) {
+        aux = a;
+        a = b;
+        b = aux;
+    }
+    if (b > c) {
+        aux = b;
+        b = c;
+        c = aux;
+    }
+    if (c > d) {
+        aux = c;
+        c = d;
+        d = aux;
+    }
+    if (d > e) {
+        aux = d;
+        d = e;
+        e = aux;
+    }
+
+    printf("%d %d %d %d %d", a, b, c, d, e);
 
     return 0;
 }
