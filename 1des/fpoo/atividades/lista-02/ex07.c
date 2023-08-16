@@ -6,7 +6,7 @@
 */
 
 int main() {
-	int numArr[5], order[5];
+	int numArr[5];
 	int n = sizeof(numArr) / sizeof(numArr[0]);
 	int i, iniPos, minPos, tempValue;
 
@@ -15,7 +15,7 @@ int main() {
 		scanf("%d", &numArr[i]);
 	}
 
-	int min = numArr[0];
+	int min;
 
 	for (iniPos = 0; iniPos < n; iniPos++) {
         min = numArr[iniPos];
