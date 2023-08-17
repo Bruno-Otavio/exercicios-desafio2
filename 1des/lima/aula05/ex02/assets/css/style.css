@@ -1,0 +1,24 @@
+body{
+    background-color: #79b8e3;
+    display: grid;
+    text-align: center;
+    place-items: center;
+}
+
+table, th, td{
+    background-color: #f1f9fe;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.max{
+    color: #f73d3d;
+}
+
+.min{
+    color: #526eed;
+}
+
+.chuva{
+    color: #768f8e;
+}

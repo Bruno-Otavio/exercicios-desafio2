@@ -1,0 +1,25 @@
+body{
+    background-color: #e8c6fd;
+    text-align: center;
+}
+
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+}
+
+.piece{
+    margin-left: auto;
+    margin-right: auto;
+    width: 95px;
+    height: 60px;
+}
+
+fieldset{
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    padding: 5px;
+}
