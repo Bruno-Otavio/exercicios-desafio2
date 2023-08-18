@@ -31,7 +31,7 @@ int main()
 		}
 		tempValue = numberArray[iniPos];
 		numberArray[iniPos] = max;
-		numberArray[maxPos] = tempValue;	
+		numberArray[maxPos] = tempValue;
 	}
 	
 	for (i = 0; i < sizeArray; i++) {

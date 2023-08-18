@@ -13,6 +13,7 @@ int main()
 	
 	factorial = 1;
 	for (i = number; i >= 1; i--) {
+		printf("%d\n", i);
 		factorial *= i;
 	}
 	printf("O fatorial do numero %d e igual a %d", number, factorial);
