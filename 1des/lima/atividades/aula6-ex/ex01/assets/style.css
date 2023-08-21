@@ -1,0 +1,21 @@
+header {
+    height: 50vh;
+}
+
+main {
+    height: 25vh;
+}
+
+footer {
+    height: 25vh;
+}
+
+.main li {
+    float: left;
+    margin-left: 5px;
+}
+
+.footer li {
+    display: inline;
+    list-style-type: circle;
+}

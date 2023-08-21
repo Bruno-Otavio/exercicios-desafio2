@@ -1,0 +1,13 @@
+body {
+    font-family: Verdana;
+    align-items: center;
+}
+
+
+table {
+    border-collapse: collapse;
+}
+  
+tr {
+    border-bottom: 1pt solid black;
+}
