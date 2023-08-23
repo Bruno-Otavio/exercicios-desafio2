@@ -1,12 +1,5 @@
-*{
-    padding: 0px;
-    padding: 0px;
-}
-
-
 body{
     display: flex;
-    /* flex-direction: row; */
     height: 100vh;
 }
 

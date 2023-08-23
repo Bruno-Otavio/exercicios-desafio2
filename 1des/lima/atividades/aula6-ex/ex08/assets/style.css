@@ -1,0 +1,30 @@
+body {
+    font-family: Verdana;
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+}
+
+header {
+    background-color: #cf4545;
+}
+
+.list {
+    display: flex;
+    justify-content: right;
+}
+
+li {
+    display: inline;
+    margin: 10px;
+    color: white;
+}
+
+main {
+    background-color: #753535;
+}
+
+.img {
+    justify-content: center;
+    align-items: center;
+}

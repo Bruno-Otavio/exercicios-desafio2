@@ -3,11 +3,14 @@ body {
     align-items: center;
 }
 
-
 table {
     border-collapse: collapse;
 }
   
 tr {
     border-bottom: 1pt solid black;
+}
+
+th {
+    justify-content: left;
 }
