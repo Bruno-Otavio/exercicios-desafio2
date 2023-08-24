@@ -7,6 +7,7 @@ body {
 
 header {
     background-color: #cf4545;
+    height: 5%;
 }
 
 .list {
@@ -22,9 +23,38 @@ li {
 
 main {
     background-color: #753535;
+    height: 90%;
 }
 
-.img {
+.img-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.img-container img {
+    border-radius: 20px;
+    width: 640px;
+    height: 400px;
+}
+
+footer {
+    background-color: #9f3d3d; 
+    height: 5%;
+}
+
+.box-container {
+    display: flex;
+    justify-content: right;
+}
+
+.box {
+    background-color: white;
+    border-radius: 20px; 
+    width: 250px;
+    height: 35px;
+    margin-right: 25px;
+    margin-top: 6px; 
 }
