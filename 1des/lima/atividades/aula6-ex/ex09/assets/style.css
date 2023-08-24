@@ -1,3 +1,40 @@
 body {
-    background-image: "./img";
+    background-image: url("./img/bg.jpeg");
+    background-size: cover;
+    font-family: Verdana;
+    margin: 0px;
+}
+
+header {
+    background-color: gray;
+    opacity: 0.8;
+}
+
+.top-box {
+    opacity: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 10px 3px 10px;
+    margin: 0px;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+}
+
+.apple-img img {
+    width: 64px;
+    height: 50px;
+    filter: invert(100%);
+}
+
+.options-list ul li {
+    color: white;
+    display: inline;
+}
+
+.date-hour {
+    color: white;
+    display: flex;
 }
