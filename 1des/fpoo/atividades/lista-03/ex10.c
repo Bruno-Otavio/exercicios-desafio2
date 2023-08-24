@@ -9,8 +9,7 @@ int main()
 {
 	int numberArray[10];
 	int sizeArray = sizeof(numberArray) / sizeof(numberArray[0]);
-	int iniPos, maxPos, maxCount, tempValue;
-	
+		
 	int i;
 	for (i = 0; i < sizeArray; i++) {
 		printf("Digite seu %d valor: ", i+1);
@@ -19,24 +18,13 @@ int main()
 	
 	int max = numberArray[0];
 
-	for (iniPos = 0; iniPos < sizeArray; iniPos++) {
-		max = numberArray[iniPos];
-		maxPos = iniPos;
-		
-		for (maxCount = iniPos + 1; maxCount < sizeArray; maxCount++) {
-			if (numberArray[maxCount] > max) {
-				max = numberArray[maxCount];
-				maxPos = maxCount;
-			}
+	for (i = 0; i < sizeArray; i++) {
+		if (numberArray[i] > max) {
+			max = numberArray[i];
 		}
-		tempValue = numberArray[iniPos];
-		numberArray[iniPos] = max;
-		numberArray[maxPos] = tempValue;
 	}
 	
-	for (i = 0; i < sizeArray; i++) {
-		printf("%d\n", numberArray[i]);
-	}
+	printf("O maior numero digitado foi: %d", max);
 	
 	return 0;
 }
