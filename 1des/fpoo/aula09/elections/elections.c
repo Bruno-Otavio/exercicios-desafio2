@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <locale.h>
 
 /*
 	Crie um programa em C que receba como entrada inicialmente o nome da cidade e quantos candidatos a prefeito esta possui.
@@ -10,6 +11,8 @@
 */
 
 int main() {
+	setlocale(LC_ALL, "");
+	
 	char cityName[32];
 	printf("Digite o nome da cidade: ");
 	scanf("%s", &cityName);
@@ -17,24 +20,52 @@ int main() {
 	int totalCandidates;
 	printf("Digite a quantidade de candidatos a prefeitos: ");
 	scanf("%d", &totalCandidates);
+	totalCandidates += 1;
 	
-	char names[totalCandidates][32];
-	char candidatesVotes[totalCandidates];
-	int totalVotes, result[totalCandidates];
+	char names[totalCandidates-1][32];
+	int candidatesVotes[totalCandidates];
+	float result[totalCandidates];
+	int totalVotes, nullVotes;
 	
 	int i;
-	for (i = 0; i < totalCandidates; i++) {
-		printf("Digite o nome do %dº candidato(a): ");
+	for (i = 0; i < totalCandidates-1; i++) {
+		printf("\nDigite o nome do %d° candidato: ", i+1);
 		scanf("%s", &names[i]);
-		
+	
 		printf("Digite o total de votos do mesmo: ");
 		scanf("%d", &candidatesVotes[i]);
 		
 		totalVotes += candidatesVotes[i];
 	}
+	printf("\nDigite o número total de votos em branco: ");
+	scanf("%d", &candidatesVotes[totalCandidates-1]);
+	totalVotes += candidatesVotes[totalCandidates-1];
+
+	printf("Digite a quantidade de votos nulos: ");
+	scanf("%d", &nullVotes);
+	
+	if (totalVotes < nullVotes) {
+		printf("\nEleição inválida.");
+		return 0;
+	}
 	
 	for (i = 0; i < totalCandidates; i++) {
-		result[i] = 
+		result[i] = candidatesVotes[i] * 100 / totalVotes;
+	}
+	
+	printf("\nEleição válida.\n");
+	
+	printf("\nVots válidos: %d \n", totalVotes);
+	printf("Votos inválidos: %d \n", nullVotes);
+	
+	printf("\nCandidato \t Porcentagem\n");
+	for (i = 0; i < totalCandidates-1; i++) {
+		printf("%s \t %.2f\n", names[i], result[i]);
+	}
+	printf("Brancos \t %.2f", result[totalCandidates-1]);
+	
+	for (i = 0; i < totalCandidates-1; i++) {
+		if (result[i] > 50)
 	}
 	
 	return 0;
