@@ -23,7 +23,7 @@ int main() {
 	
 	char names[totalCandidates][32];
 	int candidatesVotes[totalCandidates];
-	float result[totalCandidates], whiteResult;
+	float result[totalCandidates];
 	int totalVotes, whiteVotes, nullVotes;
 	
 	int i, j;
@@ -50,7 +50,7 @@ int main() {
 	
 	for (i = 0; i < totalCandidates; i++) {
 		result[i] = candidatesVotes[i] * 100 / (float)totalVotes;
-		whiteResult = whiteVotes * 100 / (float)totalVotes;
+		whiteVotes = whiteVotes * 100 / (float)totalVotes;
 	}
 	
 	printf("\nEleição válida.\n");
@@ -62,30 +62,28 @@ int main() {
 	for (i = 0; i < totalCandidates; i++) {
 		printf("%s \t %.2f\n", names[i], result[i]);
 	}
-	printf("Brancos \t %.2f\n", whiteResult);
+	printf("Brancos \t %.2f\n", whiteVotes);
 	
-	int first, second;
-	for (i = 0; i < totalCandidates; i++) {
-		for (j = 0; j < totalCandidates-1; j++) {
-			if (result[j] > result[j+1]) {
-				first = j;
-				printf("first: %d j: %d\n", first, j);
+	if (totalVotes < 200000) {
+		int winner;
+		for (i = 0; i < totalCandidates; i++) {
+			for (j = 0; j < totalCandidates-1; j++) {
+				if (result[j] > result[j+1])
+					winner = j;
 			}
 		}
-		for (j = 0; j < totalCandidates-1; j++) {
-			if (result[j] > result[j+1] && result[j] != result[first]) {
-				second = j;
-				printf("second: %d j: %d\n", second, j);
-			}
+		printf("\nO vencedor das eleições é %s com %.2f porecento.", names[winner], result[winner]);
+	} else {
+		int first, second;
+		for (i = 0; i < totalCandidates; i++) {
+			for (j = 0; j < totalCandidates-1; j++)
+				if (result[j] > result[j+1]) 
+					first = j;
+				if (result[j] > result[j+1] && j != first)
+					second = j;
 		}
+		printf("\nHaverá segundo turno entre %s e %s", names[first], names[second]);
 	}
 	
-	if (totalVotes > 200000 && candidatesVotes[first] < (totalVotes / 2 + 1))
-		printf("\nHaverá segundo turno entre %s e %s\n", names[first], names[second]);
-	else {
-		printf("\nNão haverá segundo turno.\n");
-		printf("O candidato %s venceu com %.2f porcento dos votos.\n", names[first], result[first]);
-	}
-
 	return 0;
 }

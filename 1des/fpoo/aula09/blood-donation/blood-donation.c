@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <locale.h>
-#include <string.h>
 
 /*
 	Crie um programa que receba/solicite ao usuário como entrada o número total de doadores,
