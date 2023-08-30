@@ -1,3 +1,8 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
 body {
     background-image: url("./img/bg.jpeg");
     background-size: cover;
@@ -6,12 +11,10 @@ body {
 }
 
 header {
-    background-color: gray;
-    opacity: 0.8;
+    background-color: rgb(150, 150, 150, .7);
 }
 
 .top-box {
-    opacity: 1;
     display: flex;
     justify-content: space-between;
     padding: 3px 10px 3px 10px;
@@ -24,17 +27,51 @@ header {
 }
 
 .apple-img img {
-    width: 64px;
-    height: 50px;
+    width: 16px;
+    height: auto;
+    margin-left: 10px;
     filter: invert(100%);
 }
 
-.options-list ul li {
+.options-list {
+    display: flex;
     color: white;
-    display: inline;
+}
+
+.options-list p {
+    font-size: 16px;
+    margin-left: 15px;
+    padding-top: 3px;
 }
 
 .date-hour {
     color: white;
     display: flex;
+    padding-top: 3px;
+    margin-right: 10px;
+}
+
+main {
+    height: 85vh;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+.bottom-box {
+    background-color: rgb(150, 150, 150, .7);
+    display: flex;
+    justify-content: center;
+    border-radius: 1em;
+    width: 50vw;
+    padding: 7px;
+}
+
+.bottom-box img {
+    width: 40px;
+    height: auto;
+    margin-left: 15px;
+    margin-right: 15px;
 }
