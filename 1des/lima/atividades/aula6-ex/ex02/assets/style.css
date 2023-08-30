@@ -5,12 +5,19 @@ body {
 
 table {
     border-collapse: collapse;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-  
-tr {
-    border-bottom: 1pt solid black;
+
+.tr-body {
+    border-top: 1pt solid black;
 }
 
 th {
-    justify-content: left;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
 }
