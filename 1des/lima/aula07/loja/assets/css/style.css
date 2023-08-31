@@ -1,0 +1,47 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Variable */
+:root {
+    --White: #FFFF;
+    --LightGray: rgb(230 , 230, 230);
+}
+
+body {
+    background-color: var(--LightGray);
+}
+
+/*
+    Naigation Bar
+*/
+
+.navbar-top {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1em;
+}
+
+.navbar-top .icon {
+    background-color: var(--White);
+    display: flex;
+    width: auto;
+    height: 1.5em;
+    padding: 1em .5em 1em .5em;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 1em;   
+    border-radius: 1.5em;
+}
+
+.navbar-top .shop-cart {
+    background-color: var(--White);
+    display: flex;
+    width: auto;
+    height: 1.5em;
+    padding: 1em .5em 1em .5em;
+    align-items: center;
+}
