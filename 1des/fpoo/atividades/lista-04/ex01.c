@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 #include <locale.h>
 
 /*
@@ -12,32 +11,30 @@ int main() {
     setlocale(LC_ALL, "");
 
     char names[5][32];
-    char name[64];
     float salaries[5];
-    float percentualIndex;
+    float percentIndex;
     float result;
-    
+
+    printf("Calculo de reajuste salarial.\n");
+
     int i;
     for (i = 0; i < 5; i++) {
-        printf("Digite o %d nome a seguir: ", i+1);
-        fgets(name, sizeof(name), stdin);
-        strcpy(names[i], name);
+        printf("\nDigite o %d° nome a seguir: ", i+1);
+        scanf("%s", &names[i]);
 
         printf("Digite o salario desta mesma pessoa: R$");
-        scanf("%f", salaries[i]);
+        scanf("%f", &salaries[i]);
     }
 
-    printf("Agora digite o valor do índice de reajuste: ");
-    scanf("%f", &percentualIndex);
+    printf("\nAgora digite o valor do índice de reajuste: ");
+    scanf("%f", &percentIndex);
 
+    printf("\nReajustes a seguir: \n");
+    printf("Nomes \t Salários\n");
     for (i = 0; i < 5; i++) {
-        result = salaries[i] + (salaries[i] * percentualIndex / 100);
+        result = salaries[i] * percentIndex / 100.0f + salaries[i];
         salaries[i] = result;
-    }
-
-    printf("Esses sãos os salários após o reajuste: ");
-    for (i = 0; i < 5; i++) {
-        printf("\n%s: R$%.2f", names[i], salaries[i]);
+        printf("%s \t R$%.2f\n", names[i], salaries[i]);
     }
 
     return 0;
