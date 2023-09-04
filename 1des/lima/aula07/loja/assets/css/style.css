@@ -7,6 +7,7 @@
 :root {
     --White: #FFFF;
     --LightGray: rgb(230 , 230, 230);
+    --Gray: rgb(200, 200, 200);
 }
 
 body {
@@ -20,7 +21,7 @@ body {
 .navbar-top {
     display: flex;
     justify-content: space-evenly;
-    padding: 1em;
+    padding: 1.5em;
 }
 
 .navbar-top .icon {
@@ -33,6 +34,7 @@ body {
 }
 
 .search-bar input {
+    width: 25vw;
     padding: 1em;   
     border-radius: 1.5em;
 }
@@ -44,4 +46,79 @@ body {
     height: 1.5em;
     padding: 1em .5em 1em .5em;
     align-items: center;
+}
+
+.login-register {
+    display: flex;
+    align-items: center;
+}
+
+/*
+    Header
+*/
+
+.shop-header {
+    background-color: var(--Gray);
+    display: flex;
+    justify-content: center;
+    padding: .3em;
+}
+
+.shop-header .categories {
+    width: 50vw;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.3rem;
+    color: var(--White);
+}
+
+/*
+    Main
+*/
+
+.shop-main {
+    display: flex;
+}
+
+.shop-main .side-bar {
+    width: 20%;
+    padding: 1em;
+    margin: 5px;
+}
+
+.shop-main .side-bar .filters {
+    border: .1em solid var(--Gray);
+    padding: .5em;
+}
+
+.shop-items {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1em;
+    margin: 5px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.img {
+    background-color: var(--Gray);
+    width: 150px;
+    height: 175px;
+}
+
+/*
+    Footer
+*/
+
+.shop-footer {
+    background-color: var(--Gray);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1em;
 }
