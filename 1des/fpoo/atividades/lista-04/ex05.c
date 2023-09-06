@@ -8,5 +8,33 @@
 */
 
 int main() {
+	setlocale(LC_ALL, "");
+	
+	char cities[5][32];
+	int electors[5], votes[5];
+	float participants[5];
+	
+	printf("Calcular porcentagem de participantes eleitorais de 5 cidades.\n");
+	
+	int i;
+	for (i = 0; i < 5; i++) {
+		printf("\nDigite o nome da %dª cidade: ", i+1);
+		scanf("%s", &cities[i]);
+		
+		printf("Número total de eleitores: ");
+		scanf("%d", &electors[i]);
+		
+		printf("Total de votos apurados: ");
+		scanf("%d", &votes[i]);
+		
+		participants[i] = votes[i] * 100 / (float)electors[i];
+	}
+	
+	printf("\nPorcentagem total de participantes da eleição de cada cidade: \n");
+	printf("\nCidade \t\t Porcentagem \n");
+	for (i = 0; i < 5; i++) {
+		printf("%s \t %.2f\n", cities[i], participants[i]);
+	}
+	
     return 0;
 }
