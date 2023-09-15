@@ -1,6 +1,7 @@
 * {
     margin: 0px;
     padding: 0px;
+    font-family: Verdana;
 }
 
 /* Variable */
@@ -108,8 +109,8 @@ body {
 
 .img {
     background-color: var(--Gray);
-    width: 150px;
-    height: 175px;
+    width: auto;
+    height: 25vh;
 }
 
 /*
@@ -118,7 +119,19 @@ body {
 
 .shop-footer {
     background-color: var(--Gray);
+    display: flex;
+    justify-content: center;
+}
+
+.texts {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 1em;
+    padding: 1.15em;
+}
+
+.texts p {
+    margin-left: 10em;
+    margin-right: 10em;
+    padding-top: .5em;
+    padding-bottom: .5em;
 }
