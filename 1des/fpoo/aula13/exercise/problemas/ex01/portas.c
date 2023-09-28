@@ -3,35 +3,60 @@
 
 #define BUFFER 100
 
+FILE *data, *output;
+
+char dataFileName[] = "portas.in.txt";
+char outputFileName[] = "portas.out.txt";
+
+void closeDoors(int *array) {
+	int i;
+	for (i = 0; i < BUFFER; i++)
+		array[i] = 0;
+}
+
 int main() {
 	setlocale(LC_ALL, "");
-	
-	FILE *data, *output;
 	
 	int doorState[BUFFER];
 	int number, position;
 	int i;
 	
-	for (i = 0; i < BUFFER; i++)
-		doorState[i] = 0;
+	closeDoors(doorState);
 	
-	data = fopen("portas.in.txt", "r");
+	data = fopen(dataFileName, "r");
 	
 	if (data == NULL) {
-		printf("Error - Couldn't open the file");
+		printf("Error - Couldn't open '%s'", dataFileName);
 		return 1;
 	}
 	
 	while (fscanf(data, "%d", &number) == 1) {
-		for (i = 0; i <= BUFFER; i++) {
+		for (i = 1; i <= BUFFER; i++) {
 			position = number * i;
 			
-			if (doorState[number-1])
-				doorState[number-1] == 0;
-			else
-				doorState[number-1] == 1;
+			if (doorState[position-1] == 1 && position <= BUFFER) {
+				doorState[position-1] == 0;
+				printf("Fechou %d %d\n", number, position);
+			}
+			else if (doorState[position-1] == 0 && position <= BUFFER) {
+				doorState[position-1] == 1;
+				printf("Abriu %d %d\n", number, position);
+			}
 		}
 	}
+	
+	fclose(data);
+	
+	output = fopen(outputFileName, "w");
+	
+	if (output == NULL) {
+		printf("Error - Couldn't open '%s'", outputFileName);
+		return 1;
+	}
+	
+	
+	
+	fclose(output);
 	
 	printf("Estado das portas: ");
 	for (i = 0; i < BUFFER; i++) {
