@@ -72,3 +72,55 @@ function planeHours() {
 
   document.querySelector("#resultEx6").innerHTML = `Horas em voo: ${hours}`;
 }
+
+// Exercício 7
+
+function travelAmount() {
+  const cargoPerTruck = 18; // Toneladas
+  const production = 250 // Toneladas
+
+  let trucks = Number(document.querySelector("#trucks").value);
+  let alqueiros = Number(document.querySelector("#alqueiro").value);
+
+  let travelAmount = (alqueiros * production) / (trucks * cargoPerTruck);
+
+  document.querySelector("#resultEx7").innerHTML = `Serão necessárias ${travelAmount} viagens`
+}
+
+// Exercício 8
+
+function cilinderCalculate() {
+  const PI = 3.14;
+
+  let raio = Number(document.querySelector("#raio").value);
+  let height = Number(document.querySelector("#height").value);
+
+  let area = 2 * PI * (raio * raio) + 2 * PI * raio * height;
+  let volume = PI * (raio * raio) * height;
+
+  document.querySelector("#resultEx8").innerHTML = `Área do Cilindro: ${area} | Volume do Cilindro ${volume}`;
+}
+
+// Exercício 9
+
+function priceChanger() {
+  let mercadoria = document.querySelector("#mercadoria").value;
+  let price = Number(document.querySelector("#price").value);
+  
+  let newPrice = price + price * 5 / 100;
+
+  document.querySelector("#resultEx9").innerHTML = `Valor de ${mercadoria} após o reajuste de 5%: R$${newPrice}`;
+}
+
+// Exercício 10
+
+function participation() {
+  let city = document.querySelector("#city").value;
+  let electors = Number(document.querySelector("#electors").value);
+  let votes = Number(document.querySelector("#votes").value);
+
+  let votosPercentage = votes * 100 / electors;
+
+  document.querySelector("#resultEx10").innerHTML = `A cidade de ${city} teve um total de ${votosPercentage}% de participantes`
+}
+
