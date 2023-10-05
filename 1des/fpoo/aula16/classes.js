@@ -20,9 +20,11 @@ class Object {
   }
 }
 
-const caneta = new Object("Caneta", 2.59, 7);
-const monitor = new Object("Monitor", 789.9, 3);
-const gpu = new Object("Placa de Vídeo", 1289.78, 1);
+const objects = {};
+
+objects.push(new Object("Caneta", 2.59, 7));
+objects.push(new Object("Monitor", 789.9, 3));
+objects.push(new Object("Placa de Vídeo", 1289.78, 1));
 
 const main = document.querySelector("#objetos");
 
