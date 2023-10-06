@@ -20,22 +20,30 @@ class Object {
   }
 }
 
-const objects = {};
+const objects = [];
 
 objects.push(new Object("Caneta", 2.59, 7));
 objects.push(new Object("Monitor", 789.9, 3));
 objects.push(new Object("Placa de Vídeo", 1289.78, 1));
 
+console.table(objects);
+
 const main = document.querySelector("#objetos");
 
-const canetaDiv = document.createElement("div");
-const monitorDiv = document.createElement("div");
-const gpuDiv = document.createElement("div");
+objects.forEach((element) => {
+  const div = document.createElement("div");
+  div.innerHTML = element.showHTML();
+  main.appendChild(div);
+});
 
-main.appendChild(canetaDiv);
-main.appendChild(monitorDiv);
-main.appendChild(gpuDiv);
+// const canetaDiv = document.createElement("div");
+// const monitorDiv = document.createElement("div");
+// const gpuDiv = document.createElement("div");
 
-canetaDiv.innerHTML = caneta.showHTML();
-monitorDiv.innerHTML = monitor.showHTML();
-gpuDiv.innerHTML = gpu.showHTML();
+// main.appendChild(canetaDiv);
+// main.appendChild(monitorDiv);
+// main.appendChild(gpuDiv);
+
+// canetaDiv.innerHTML = caneta.showHTML();
+// monitorDiv.innerHTML = monitor.showHTML();
+// gpuDiv.innerHTML = gpu.showHTML();
