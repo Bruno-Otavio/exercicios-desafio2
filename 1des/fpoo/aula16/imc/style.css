@@ -36,6 +36,8 @@ h1 {
   align-items: center;
   padding: 10px;
   border-radius: 10px;
+  border-right: 2px solid var(--Beige);
+  border-bottom: 2px solid var(--Beige);
 }
 
 .pacientes div label {
@@ -47,6 +49,8 @@ h1 {
   display: grid;
   grid-template-columns: repeat(2, 2fr);
   border-radius: 0px;
+  border-right: 0px;
   border-top: 2px solid var(--Navy);
+  border-bottom: 2px solid var(--Navy);
   padding: 0px;
 }

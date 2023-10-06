@@ -39,11 +39,12 @@ class Paciente {
 const pacientes = [
   new Paciente("André Mattos", 80, 1.8),
   new Paciente("João da Silva", 100, 1.7),
-  new Paciente("Maria de Souza", 60, 165),
+  new Paciente("Maria de Souza", 60, 1.65),
   new Paciente("José de Oliveira", 90, 1.75),
   new Paciente("Silvia Andradae", 60, 1.85),
   new Paciente("Sueli Oliveira", 44, 1.65),
   new Paciente("Pedro de Souza", 110, 1.85),
+  new Paciente("Bruno Otávio", 54, 1.73),
 ];
 
 const main = document.querySelector("#pacientes");
