@@ -27,10 +27,14 @@ int main() {
 		friends = atoi(strtok(text, " "));
 		fruits = atoi(strtok(NULL, " "));
 		
+		if (fruits == 0 || friends == 0)
+			break;
+		
 		juiceFriends = fruits * mlFruit / (float)(friends * 1000);
 		
 		fprintf(output, "%.2f\n", juiceFriends);
 	}
+	
 	
 	fclose(data);
 	fclose(output);

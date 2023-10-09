@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define BUFFER_SIZE 1024
 #define DATA_FILE_NAME "entrada.csv"
@@ -19,12 +21,14 @@ int main() {
 	}
 	
 	while (fgets(buffer, BUFFER_SIZE, data)) {
-		char *token;
-		
-		token = strtok(buffer, ";");
-		
+		char *token = strtok(buffer, ";");
+				
 		while (token != NULL) {
-			printf("%s ", token);
+			row++;
+			if (row == 1)
+				continue;
+			
+			printf("%-12s ", token);
 			token = strtok(NULL, ";");
 		}
 		printf("\n");

@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 struct Lista{
     int dado;
     struct Lista *prox;
@@ -8,7 +7,6 @@ struct Lista{
 struct Lista *inicio = NULL;
 struct Lista *fim = NULL;
 struct Lista *aux = NULL;
-
 void mostraLista(){
     aux = inicio;
     printf("Lista:\n");
@@ -17,7 +15,6 @@ void mostraLista(){
         aux = aux->prox;
     }
 }
-
 int push(int dado){
     aux = (struct Lista*) malloc(sizeof(struct Lista));
     if(aux == NULL) return 0;
@@ -62,12 +59,12 @@ int slice(int index){
     return 0;
 }
 
-int main(){
+int main(){	
 	int continueD, decision;
-	int newElement, rmElement;
+	int newElement, removeElement;
 	
 	do {
-		mostraList();
+		mostraLista();
 		
 		printf("\nDeseja adicionar/retirar numeros a pilha? Sim: 1, Nao: 0 - ");
 		scanf("%d", &continueD);
@@ -80,13 +77,17 @@ int main(){
 				scanf("%d", &newElement);
 				push(newElement);
 			} else {
-				printf("Digite o numeor a ser removido a seguir: ");
-				scanf("%d", &rmElement);
-				slice(rmElement);
+				mostraLista();
+				
+				printf("Digite o número que queira remover: ");
+				scanf("%d", &removeElement);
+				
+				slice(removeElement);
+				pop();
 			}
 		}
 	
-	} while (continueD);    
-    
-    return 0;
+	} while (continueD);
+	
+	return 0;
 }
