@@ -20,7 +20,7 @@ int main() {
 		return 1;
 	}
 	
-	while (fgets(buffer, BUFFER_SIZE, data)) {
+	while (fgets(buffer, sizeof(buffer), data)) {
 		char *token = strtok(buffer, ";");
 				
 		while (token != NULL) {
@@ -28,8 +28,14 @@ int main() {
 			if (row == 1)
 				continue;
 			
+			if (column == 0) {
+				printf("%s", token);
+			}
+
 			printf("%-12s ", token);
 			token = strtok(NULL, ";");
+			
+			column++;
 		}
 		printf("\n");
 	}	

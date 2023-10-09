@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <locale.h>
 
 #define BUFFER 256
@@ -19,9 +20,9 @@ char newDirection(char direction, char left, char right) {
 }
 
 int main() {
-	setlocale(LC_ALL, "");
+    setlocale(LC_ALL, "");
 
-	char text[BUFFER];
+    char text[BUFFER];
 
     data = fopen(dataFileName, "r");
 
@@ -30,12 +31,22 @@ int main() {
         return 1;
     }
 
+    char personDirection = 'N';
+
     int i;
     while (fgets(text, BUFFER, data) != NULL) {
         int numDirections = atoi(strtok(text, " "));
 
-        char directions[] = strtok(text, " ");
-        char personDirection = 'N';
+        if (numDirections == 0)
+            break;
+
+        char *directionsStr = strtok(NULL, " ");
+
+        printf("%s %d %s \n", text, numDirections, directionsStr);
+        
+        char directions[BUFFER];
+        strcpy(directions, directionsStr);
+        directions[BUFFER-1] = '\0';
 
         for (i = 0; i < numDirections; i++) {
             if (personDirection == 'N')
@@ -58,5 +69,9 @@ int main() {
         return 1;
     }
 
-	return 0;
+    fprintf(output, "%c", personDirection);
+
+    fclose(output);
+
+    return 0;
 }
