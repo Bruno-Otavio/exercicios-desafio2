@@ -5,6 +5,33 @@
 #define BUFFER_SIZE 1024
 #define DATA_FILE_NAME "entrada.csv"
 
+int countLines(char *filename) {
+	FILE *file = fopen(filename, "r");
+	
+	char c;
+	int lines = 0;
+	
+	if (file == NULL) {
+		printf("Error - Couldn't open %s", filename);
+		return -1;
+	}
+	
+	lines++;
+	while ((c=fgetc(file)) != EOF) {
+		if (c == '\n')
+			lines++;
+	}
+	
+	fclose(file);
+	return lines-1;
+}
+
+struct Person {
+	int id;
+	char name[32];
+	char birthday[64];
+};
+
 int main() {
 	FILE* data, output;
 	
@@ -12,6 +39,10 @@ int main() {
 	
 	int row = 0;
 	int column = 0;
+
+	int dataLines = countLines(DATA_FILE_NAME);
+
+	struct Person people[dataLines];
 	
 	data = fopen(DATA_FILE_NAME, "r");
 	
@@ -19,24 +50,22 @@ int main() {
 		printf("Error - Couldn't open %s", DATA_FILE_NAME);
 		return 1;
 	}
-	
-	while (fgets(buffer, sizeof(buffer), data)) {
-		char *token = strtok(buffer, ";");
-				
-		while (token != NULL) {
-			row++;
-			if (row == 1)
-				continue;
-			
-			if (column == 0) {
-				printf("%s", token);
-			}
 
-			printf("%-12s ", token);
-			token = strtok(NULL, ";");
-			
-			column++;
+	int i;
+	while (fgets(buffer, sizeof(buffer), data)) {
+		row++;
+		
+		if (row == 1)
+			continue;	
+		
+		char *token = strtok(buffer, ";");
+		
+		for (i = 0; i < dataLines; i++) {
+			people[i].id = 1;
+			printf("%d", people[i].id);
 		}
+		
+		column++;
 		printf("\n");
 	}	
 	
