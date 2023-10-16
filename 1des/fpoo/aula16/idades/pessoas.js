@@ -4,6 +4,7 @@ class Pessoa {
         this.nascimento = nascimento;
         this.sexo = sexo;
         this.idade = this.calcIdade(); //Atributo calculado
+        this.classificacao = this.classificar();
     }
 
     calcIdade() {
@@ -24,7 +25,22 @@ class Pessoa {
                     <td>${this.nascimento.toLocaleDateString()}</td>
                     <td>${this.sexo}</td>
                     <td>${this.idade}</td>
+                    <td>${this.classificacao}</td>
                 </tr>`;
+    }
+
+    classificar() {
+        if (this.idade < 12) {
+            return "Criança";
+        } else if (this.idade < 18) {
+            return "Adolescente";
+        } else if (this.idade < 30) {
+            return "Jovem";
+        } else if (this.idade < 60) {
+            return "Adulto";
+        } else if (this.idade >= 60) {
+            return "Idoso"
+        }
     }
 }
 
