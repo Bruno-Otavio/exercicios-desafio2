@@ -43,6 +43,7 @@ h1 {
 .pacientes div label {
   padding-bottom: 5px;
   padding-top: 5px;
+  color: var(--Beige);
 }
 
 .pacientes div div {
@@ -50,7 +51,11 @@ h1 {
   grid-template-columns: repeat(2, 2fr);
   border-radius: 0px;
   border-right: 0px;
-  border-top: 2px solid var(--Navy);
-  border-bottom: 2px solid var(--Navy);
+  border-top: 2px solid var(--Blue);
+  border-bottom: 2px solid var(--Blue);
   padding: 0px;
+}
+
+.paciente-nome {
+  color: var(--Navy);
 }

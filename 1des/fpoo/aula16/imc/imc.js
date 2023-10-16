@@ -27,8 +27,10 @@ class Paciente {
   }
 
   showHTML() {
-    let text = `<label>${this.nome}</label>
-                <div><label>Peso:</label><label>${this.peso.toFixed(2)} Kg</label>
+    let text = `<label class="paciente-nome">${this.nome}</label>
+                <div><label>Peso:</label><label>${this.peso.toFixed(
+                  2
+                )} Kg</label>
                 <label>Altura:</label><label>${this.altura.toFixed(2)} m</label>
                 <label>IMC:</label><label>${this.imc().toFixed(1)}</label></div>
                 <label>Diagnóstico:</label><label>${this.diagnosticar()}</label>`;
