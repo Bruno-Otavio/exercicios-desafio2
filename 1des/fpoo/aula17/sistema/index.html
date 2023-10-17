@@ -4,13 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
     <main>
       <div class="input-area">
-        <input type="text" id="name" placeholder="Nome do Funcionário" />
-        <input type="number" id="salary" placeholder="Salário do Funcionário" />
-        <input type="submit" onclick="addEmployees()" />
+        <form id="new-employee">
+          <input type="text" name="name" placeholder="Nome do Funcionário" />
+          <input type="number" name="salary" placeholder="Salário do Funcionário" />
+          <input type="submit" />
+        </form>
       </div>
       <div id="employees-table"></div>
     </main>

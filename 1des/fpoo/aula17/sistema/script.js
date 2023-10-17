@@ -33,20 +33,24 @@ class Person {
   }
 }
 
+const form = document.querySelector("#new-employee");
 const table = document.querySelector("#employees-table");
 
-// const employees = [];
+const employees = [];
 
-function addEmployees() {
-  let name = document.querySelector("#name").value;
-  let salary = Number(document.querySelector("#salary").value);
-  const employee = new Person(name, salary);
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const employee = new Person(form.name.value, form.salary.value);
+  employees.push(employee);
 
+  form.reset();
+  updateTable();
+});
+
+function updateTable() {
   const div = document.createElement("div");
-  div.innerHTML = employee.showHTML();
-  console.log(div);
-  console.log(table);
+  employees.forEach((employee) => {
+    div.innerHTML = employee.showHTML();
+  });
   table.appendChild(div);
-
-  // employees.push(employee);
 }
