@@ -24,7 +24,9 @@ class Person {
   showHTML() {
     let string = `
       <label>Nome:</label><label>${this.name}</label>
-      <label>Salário Base:</label><label>${this.salario}</label>
+      <div><div><label>Salário Base:</label><label>${this.salario}</label></div>
+      <div><label>INSS:</label><label>${this.inss()}</label></div>
+      <div><label>IRRF:</label><label>${this.irrf()}</label></div></div>
       <label>Salário Líquido:</label><label>${
         this.salario - this.inss() - this.irrf()
       }</label>`;
@@ -34,10 +36,11 @@ class Person {
 }
 
 const form = document.querySelector("#new-employee");
-const table = document.querySelector("#employees-table");
+const table = document.querySelector("#employees-cards");
 
 const employees = [];
 
+// Add Employees
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const employee = new Person(form.name.value, form.salary.value);

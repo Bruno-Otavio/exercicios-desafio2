@@ -1,4 +1,64 @@
 * {
-	font-family: Verdana;
+  font-family: Verdana;
 }
 
+:root {
+  --DarkBlue: #192655;
+  --Blue: #3876bf;
+  --Beige: #e1aa74;
+  --White: #f3f0ca;
+}
+
+body {
+  background-color: var(--Blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 2.5em;
+}
+
+.input-area input {
+  border-radius: 25px;
+  border: 2px solid var(--DarkBlue);
+  border-right-width: 3.5px;
+  border-bottom-width: 3.5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.employees-cards {
+  background-color: var(--Beige);
+  display: grid;
+  grid-template-columns: repeat(4, 3fr);
+  column-gap: 1.5em;
+  row-gap: 1.5em;
+  justify-content: center;
+  border-radius: 2em;
+  border: 3px solid var(--DarkBlue);
+  border-right-width: 5px;
+  border-bottom-width: 5px;
+  padding: 1.2em;
+  color: var(--DarkBlue);
+}
+
+.employees-cards div {
+  background-color: var(--White);
+  border-radius: 1.5em 0.5em 1.5em 0.5em;
+  border: 2.5px solid var(--DarkBlue);
+  border-right-width: 3.5px;
+  border-bottom-width: 3.5px;
+  padding: 0.5em;
+}
+
+.employees-cards div div {
+  padding: 0px;
+  border-radius: 0px;
+  border: 0px solid var(--DarkBlue);
+}
