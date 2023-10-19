@@ -15,12 +15,14 @@
         name="salario"
         placeholder="Digite um salario:"
       />
-      <input type="submit" value="Enviar" onclick="" />
+      <input type="submit" value="Enviar" />
     </form>
 
     <div class="cards">
       <div class="card model">
-        <button type="button" id="remove-button">X</button>
+        <button type="button" id="remove-button" onclick="removeCard(this)">
+          X
+        </button>
         <h1 id="nomeValor">Nome</h1>
         <h4 id="salarioValor">1000</h4>
         <h4 id="salarioBase">1000</h4>

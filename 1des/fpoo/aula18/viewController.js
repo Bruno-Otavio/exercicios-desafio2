@@ -12,19 +12,17 @@ function criarCard() {
   let card = document.querySelector(".card");
   cards.innerHTML = "";
 
-  var contador = 0;
-
   pessoas.forEach((pessoa) => {
     let cardNew = card.cloneNode(true);
     cardNew.classList.remove("model");
-    // cardNew.classList.add(contador);
     cardNew.querySelector("#nomeValor").innerHTML = pessoa.nome;
     cardNew.querySelector("#salarioValor").innerHTML = pessoa.salario;
     cardNew.querySelector("#salarioBase").innerHTML = pessoa.salarioBase;
     cardNew.querySelector("#salarioLiquido").innerHTML = pessoa.salarioLiquido;
     cards.appendChild(cardNew);
-
-    contador += 1;
-    console.log(contador);
   });
+}
+
+function removeCard(element) {
+  element.parentNode.remove();
 }
