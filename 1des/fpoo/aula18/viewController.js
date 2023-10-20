@@ -12,6 +12,8 @@ function criarCard() {
   let card = document.querySelector(".card");
   cards.innerHTML = "";
 
+  cards.appendChild(card);
+
   pessoas.forEach((pessoa) => {
     let cardNew = card.cloneNode(true);
     cardNew.classList.remove("model");
@@ -19,10 +21,17 @@ function criarCard() {
     cardNew.querySelector("#salarioValor").innerHTML = pessoa.salario;
     cardNew.querySelector("#salarioBase").innerHTML = pessoa.salarioBase;
     cardNew.querySelector("#salarioLiquido").innerHTML = pessoa.salarioLiquido;
+    cardNew.querySelector(".pessoa-id").innerHTML = `${pessoas.indexOf(
+      pessoa
+    )}`;
     cards.appendChild(cardNew);
   });
 }
 
 function removeCard(element) {
   element.parentNode.remove();
+  pessoas.splice(
+    element.parentNode.querySelector(".pessoa-id").innerHTML.slice(1),
+    1
+  );
 }
