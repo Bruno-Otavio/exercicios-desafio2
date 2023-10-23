@@ -7,6 +7,16 @@ formPessoa.addEventListener("submit", (e) => {
   criarCard();
 });
 
+function updateCard(card, pessoa) {
+  card.querySelector("#nomeValor").innerHTML = pessoa.nome;
+  card.querySelector("#salarioValor").innerHTML = pessoa.salario;
+  card.querySelector("#salarioBase").innerHTML = pessoa.salarioBase;
+  card.querySelector("#salarioLiquido").innerHTML = pessoa.salarioLiquido;
+  card.querySelector(".pessoa-id").innerHTML = `${pessoas.indexOf(
+    pessoa
+  )}`;
+}
+
 function criarCard() {
   const cards = document.querySelector(".cards");
   let card = document.querySelector(".card");
@@ -17,13 +27,7 @@ function criarCard() {
   pessoas.forEach((pessoa) => {
     let cardNew = card.cloneNode(true);
     cardNew.classList.remove("model");
-    cardNew.querySelector("#nomeValor").innerHTML = pessoa.nome;
-    cardNew.querySelector("#salarioValor").innerHTML = pessoa.salario;
-    cardNew.querySelector("#salarioBase").innerHTML = pessoa.salarioBase;
-    cardNew.querySelector("#salarioLiquido").innerHTML = pessoa.salarioLiquido;
-    cardNew.querySelector(".pessoa-id").innerHTML = `${pessoas.indexOf(
-      pessoa
-    )}`;
+    updateCard(cardNew, pessoa);
     cards.appendChild(cardNew);
   });
 }
@@ -34,4 +38,42 @@ function removeCard(element) {
     element.parentNode.querySelector(".pessoa-id").innerHTML.slice(1),
     1
   );
+}
+
+function makeEditable(element) {
+  let card = element.parentNode;
+  card.querySelector("#nomeValor").contentEditable = "true";
+  card.querySelector("#salarioValor").contentEditable = "true";
+
+  card.querySelector("#apply-button").style.display = "inline";
+  card.querySelector("#cancel-button").style.display = "inline";
+}
+
+function makeUneditable(element) {
+  element.querySelector("#nomeValor").contentEditable = "false";
+  element.querySelector("#salarioValor").contentEditable = "false";
+
+  element.querySelector("#apply-button").style.display = "none";
+  element.querySelector("#cancel-button").style.display = "none";
+}
+
+function applyEdit(element) {
+  let card = element.parentNode;
+  let pessoa = pessoas[card.querySelector(".pessoa-id").innerHTML];
+
+  pessoa.nome = card.querySelector("#nomeValor").innerHTML;
+  pessoa.salario = Number(card.querySelector("#salarioValor").innerHTML);
+  pessoa.salarioBase = (pessoa.salario - pessoa.inss()).toFixed(2);
+  pessoa.salarioLiquido = (pessoa.salarioBase - pessoa.irrf()).toFixed(2);
+
+  updateCard(card, pessoa);
+  makeUneditable(card);
+}
+
+function cancelEdit(element) {
+  let card = element.parentNode;
+  let pessoa = pessoas[card.querySelector(".pessoa-id").innerHTML];
+
+  updateCard(card, pessoa);
+  makeUneditable(card);
 }

@@ -29,3 +29,11 @@ body {
 .model {
   display: none;
 }
+
+.pessoa-id {
+  display: none;
+}
+
+#apply-button, #cancel-button {
+  display: none;
+}
