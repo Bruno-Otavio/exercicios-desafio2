@@ -4,12 +4,17 @@
   margin: 0px;
 }
 
+h2 {
+  margin: 1em 0px 1em 0px;
+}
+
 .main-navbar {
   background-color: lightgray;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row-reverse;
+  justify-content: space-between;
   font-size: 1.5rem;
-  padding: 0.4em 0px 0.4em 0px;
+  padding: 0.4em 1em 0.4em 1em;
 }
 
 .menu {
@@ -43,20 +48,12 @@
   font-size: 1.23rem;
 }
 
-.information .text h2 {
-  margin: 1em 0px 1em 0px;
-}
-
 .about-me {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 1.23rem;
   margin: 3em 1em 3em 1em;
-}
-
-.about-me h2 {
-  margin: 1em 0px 1em 0px;
 }
 
 .about-me .interest-text {
@@ -78,12 +75,82 @@
 
 .about-me .hobby-text .favorite-game {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+}
+
+.about-me .hobby-text .favorite-game p {
+  width: 50%;
 }
 
 .about-me .hobby-text .favorite-game .img {
   background-color: gray;
-  width: 7em;
+  width: 5em;
   height: 5em;
+  margin-right: 2em;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.23rem;
+  margin: 3em 1em 3em 1em;
+}
+
+.projects .project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects .project .flavour-text {
+  width: 50%;
+}
+
+.projects .project .flavour-text h3 {
+  padding-bottom: 1em;
+}
+
+.projects .project .img {
+  background-color: gray;
+  width: 10em;
+  height: 10em;
+  margin-right: 2em;
+}
+
+.future-plans {
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.23rem;
+  margin: 3em 1em 3em 1em;
+}
+
+.future-plans p {
+  width: 75%;
+}
+
+footer {
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  margin-top: 3em;
+}
+
+footer .contact {
+  display: flex;
+  padding: .5em;
+}
+
+footer .img {
+  background-color: gray;
+  width: 1em;
+  height: 1em;
+  margin-right: .7em;
 }
