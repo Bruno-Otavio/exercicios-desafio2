@@ -1,0 +1,89 @@
+* {
+  font-family: Verdana;
+  padding: 0px;
+  margin: 0px;
+}
+
+.main-navbar {
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  padding: 0.4em 0px 0.4em 0px;
+}
+
+.menu {
+  background-color: gray;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.main-navbar .navbar-links {
+  display: none;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3em 1em 3em 1em;
+}
+
+.information .img {
+  background-color: gray;
+  width: 250px;
+  height: 250px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+  font-size: 1.23rem;
+}
+
+.information .text h2 {
+  margin: 1em 0px 1em 0px;
+}
+
+.about-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.23rem;
+  margin: 3em 1em 3em 1em;
+}
+
+.about-me h2 {
+  margin: 1em 0px 1em 0px;
+}
+
+.about-me .interest-text {
+  width: 75%;
+  border-bottom: 2px solid darkgray;
+  padding: 1.5em 1em 1.5em 1em;
+}
+
+.about-me .hobby-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-me .hobby-text .main-p {
+  width: 75%;
+  padding: 1.5em 1em 1.5em 1em;
+}
+
+.about-me .hobby-text .favorite-game {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.about-me .hobby-text .favorite-game .img {
+  background-color: gray;
+  width: 7em;
+  height: 5em;
+}
