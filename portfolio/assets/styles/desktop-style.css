@@ -1,29 +1,40 @@
-@media only screen and (min-width: 737px) {
-    .menu {
-        display: none;
-    }
+@media only screen and (min-width: 1115px) {
+  .menu {
+    display: none;
+  }
 
-    .main-navbar .navbar-links {
-        display: flex;
-    }
+  .main-navbar .navbar-links {
+    display: flex;
+  }
 
-    .main-navbar .navbar-links ul {
-        list-style-type: none;
-        display: flex;
-    }
+  .main-navbar .navbar-links ul {
+    list-style-type: none;
+    display: flex;
+  }
 
-    .main-navbar .navbar-links ul li {
-        padding-left: 1.5em;
-    }
+  .main-navbar .navbar-links ul li {
+    padding-left: 1.5em;
+  }
 
-    .information {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
+  .information {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .information .text {
-        width: 45%;
-        padding-left: 2em;
-    }
+  .information .text {
+    width: 45%;
+    padding-left: 2em;
+  }
+
+  .projects {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .projects .project {
+    padding: 0em;
+  }
 }
