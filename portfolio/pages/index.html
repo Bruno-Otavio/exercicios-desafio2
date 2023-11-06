@@ -6,11 +6,19 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="../assets/styles/style.css" />
     <link rel="stylesheet" href="../assets/styles/desktop-style.css" />
+    <link rel="stylesheet" href="../assets/styles/background-style.css"/>
   </head>
   <body>
+    <!--div class="background">
+      <div class="bubbles">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div!-->
+    </div>
     <nav class="main-navbar">
-      <div class="menu"></div>
-      <div class="navbar-links">
+      <div class="menu" id="menu" onclick="openMenu()"></div>
+      <div class="navbar-links" id="links">
         <ul>
           <li>About me</li>
           <li>Projects</li>
@@ -21,6 +29,14 @@
       <div class="home">
         <p>Bruno Otávio</p>
       </div>
+      <script>
+        var menu = document.getElementById("links");
+
+        function openMenu() {
+          links.style.right = "17%"
+          links.style.display = "flex";
+        }
+      </script>
     </nav>
     <main>
       <div class="information">
@@ -43,12 +59,12 @@
               My interest in learn software development / web development
               started at a young age, I remember it clearly when I was searching
               on the internet how to create my own website, just because I
-              wanted to expose what I love the most, which is games.
+              was curious.
             </p>
           </div>
           <div class="hobby-text">
             <p class="main-p">
-              As I said before, I LOVE GAMES, it is something I can talk about
+              One of muy hobbies is gaming, it is something I can talk about
               for hours and not get tired. My passion started very early,
               playing games on my PlayStation 2, after some time, my mother
               bought for me my first laptop as a gift and then, I went deep into
@@ -57,7 +73,7 @@
             <div class="favorite-game">
               <div class="img"></div>
               <p>
-                My favorite game is Persona 4, a JRPG with an amazing story and
+                One game I like a lot is Persona 4, a JRPG with an amazing story and
                 characters, that I have played for hours and I love the most.
               </p>
             </div>
@@ -95,7 +111,7 @@
         <h2>Future Plans</h2>
         <p>
           To my future, I want to be able to work with software development
-          while I can pursuit what I love. I want to focus on the back-end part
+          while I can pursuit my hobbies. I want to focus on the back-end part
           of the development or, while it may not be my main objective, be able
           to work with game development.
         </p>
