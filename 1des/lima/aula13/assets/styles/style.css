@@ -6,32 +6,33 @@
 }
 
 :root {
-  --blue: #3d30a2;
-  --purple: #b15eff;
-  --orange: #ffa33c;
-  --yellow: #fffb73;
+  --blue: #364F6B;
+  --cyan: #3FC1C9;
+  --white: #F5F5F5;
+  --pink: #FC5185;
 }
 
 body {
-  background-color: var(--blue);
+  background-color: var(--white);
 }
 
 .item-model {
-  background-color: #ffff;
+  background-color: var(--cyan);
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 30vh;
-  max-height: 40vh;
+  min-height: 350px;
+  max-height: 100px;
   padding: 0.5em;
+/*  border-right: 5px solid var(--blue);
+  border-bottom: 5px solid var(--blue); */
+  border-radius: 10px;
 }
 
 .item-model img {
   width: 15em;
   height: auto;
   margin-bottom: 1em;
-}
-
-.item-model div {
+  border-radius: 15px;
 }
