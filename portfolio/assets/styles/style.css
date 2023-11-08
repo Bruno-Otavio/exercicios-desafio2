@@ -24,7 +24,12 @@ h2 {
 }
 
 .main-navbar .navbar-links {
+  list-style-type: none;
   display: none;
+}
+
+.main-navbar .navbar-links ul li {
+  padding-right: 1.5em;
 }
 
 .information {

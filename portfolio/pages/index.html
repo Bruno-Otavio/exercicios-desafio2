@@ -18,25 +18,18 @@
     </div>
     <nav class="main-navbar">
       <div class="menu" id="menu" onclick="openMenu()"></div>
-      <div class="navbar-links" id="links">
-        <ul>
+      <div class="navbar-links" id="nav-links">
+        <ul id="links">
           <li>About me</li>
           <li>Projects</li>
           <li>Future Plans</li>
           <li>Contact</li>
         </ul>
       </div>
-      <div class="home">
+      <div class="home" id="homeID">
         <p>Bruno Otávio</p>
       </div>
-      <script>
-        var menu = document.getElementById("links");
-
-        function openMenu() {
-          links.style.right = "17%"
-          links.style.display = "flex";
-        }
-      </script>
+      <script src="../scripts/menu-script.js"></script>
     </nav>
     <main>
       <div class="information">
