@@ -25,6 +25,7 @@
   .information .text {
     width: 45%;
     padding-left: 2em;
+    margin-top: 0px;
   }
 
   .projects {
