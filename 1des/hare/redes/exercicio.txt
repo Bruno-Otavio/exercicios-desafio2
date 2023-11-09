@@ -1,0 +1,7 @@
+IP: 10.87.202.166
+MAC Address: 20-47-47-FD-CF-5A
+GateWay da Rede: 10.87.202.129
+Endereço Internet (externo): 186.238.4.130
+Nome da Máquina: DESKTOP-79N0DMC
+TTL do GateWay: 255
+TTL da Máquina: 128
