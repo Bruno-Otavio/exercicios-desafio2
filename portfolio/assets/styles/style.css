@@ -1,8 +1,8 @@
 :root {
-  --navy: #0C356A;
-  --blue: #0174BE;
-  --yellow: #FFC436;
-  --wedding:#FFF0CE;
+  --navy: #0c356a;
+  --blue: #0174be;
+  --yellow: #ffc436;
+  --wedding: #fff0ce;
 }
 
 * {
@@ -42,7 +42,23 @@ p {
 
 .main-navbar .navbar-links {
   list-style-type: none;
-  display: none;
+  display: flex;
+  position: relative;
+  right: -50em;
+  animation: 2s linear fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.main-navbar .navbar-links ul {
+  display: flex;
 }
 
 .main-navbar .navbar-links ul li {
@@ -54,7 +70,7 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 3em 1em 3em 1em;
+  padding: 0em 1em 3em 1em;
   height: 100vh;
 }
 

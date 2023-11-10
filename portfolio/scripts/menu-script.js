@@ -2,9 +2,14 @@ var links = document.getElementById("nav-links");
 var ul = document.getElementById("links");
 var home = document.getElementById("homeID");
 
-var style = `
+var ulStyle = `
   list-style-type: none;
-  display: flex;  
+  display: flex;
+`;
+
+var linksStyle = `
+  display: flex;
+  right: 0em;
 `;
 
 var open = false;
@@ -19,12 +24,13 @@ menu.addEventListener("click", () => {
 });
 
 function openMenu() {
-  links.style.display = "flex";
-  ul.style.cssText = style;
+  links.style.cssText = linksStyle;
+  ul.style.cssText = ulStyle;
   home.style.display = "none";
 }
 
 function closeMenu() {
-  links.style.display = "none";
+  links.style.display = "block";
+  links.style.right = "-50em";
   home.style.display = "block";
 }

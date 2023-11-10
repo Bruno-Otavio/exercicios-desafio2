@@ -1,0 +1,16 @@
+1 - Dado o IP 192.168.10.5/24, qual é a máscara de subrede?
+	- Máscara: C
+
+2 - Dado o IP 10.87.202.132/25 qual é o gateway e máscara de subrede?
+	- Gateway: 10.87.202.129, Máscara: C
+
+3 - Dado o IP 172.16.100.25/24 qual é o gateway, máscara de subrede e broadcast?
+	- Gateway: 172.16.100.1
+	- Máscara: C
+	- Broadcast: 172.16.100.255
+
+4 - Dado o IP 192.168.1.144/26 qual a máscara, o IP da rede, o Gateway e o Broadcast?
+	- Máscara: C, 255.2555.255.192
+	- IP: 192.168.1.128
+	- Gateway: 192.168.129
+	- Broadcast: 192.168.191
