@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Cliques</title>
+</head>
+<body>
+    <h1>Contador de cliques</h1>
+    <button onclick="addClick()">Clique em mim</button>
+    <button onclick="resetClick()">Zerar o contador</button>
+    <p>O contador está com <span id="num">0</span> cliques.</p>
+    <script>
+        var clicks = 0;
+        const span =  document.getElementById("num");
+        function addClick() {
+            clicks += 1;
+            span.innerHTML = `${clicks}`;
+        }
+        function resetClick() {
+            clicks = 0;
+            span.innerHTML = `${clicks}`;
+        }
+    </script>
+</body>
+</html>

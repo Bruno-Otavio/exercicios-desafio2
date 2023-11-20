@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números com JS</title>
+</head>
+<body>
+    <h1>Somando dois números</h1>
+    <button onclick="sum()">Iniciar a soma</button>
+    <p id="p">O resultado vem aqui...</p>
+    <script>
+        function sum() {
+            let num1 = parseInt(prompt("Digite um número"));
+            let num2 = parseInt(prompt("Digite outro número"));
+            const p = document.getElementById("p");
+            p.innerHTML = `A soma de ${num1} e ${num2} é igual a ${num1+num2}`;
+        }
+    </script>
+</body>
+</html>

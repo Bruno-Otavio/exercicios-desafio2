@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisando Data e Hora</title>
+</head>
+<body>
+    <h1>Analisando data e hora</h1>
+    <button onclick="date()">Inciar Análise</button>
+    <section id="section">
+        <p>Aqui vai aparecer algo...</p>
+    </section> 
+    <script>
+        function date() {
+            let months = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
+            let week = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+            let date = new Date();
+
+            const section = document.getElementById("section");
+            section.innerHTML = `
+                <p>Dia: ${date.getDate()}</p>
+                <p>Mẽs: ${months[date.getMonth()]}</p>
+                <p>Ano: ${date.getFullYear()}</p>
+                <p>Dia da semana: ${week[date.getDay()]}</p>
+                <p>Hora: ${date.getHours()}</p>
+                <p>Minutos: ${date.getMinutes()}</p>
+                <p>Segundos: ${date.getSeconds()}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

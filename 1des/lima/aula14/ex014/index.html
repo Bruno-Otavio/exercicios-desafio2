@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interagindo com o sistema</title>
+</head>
+<body>
+    <h1>Interagindo com o sitema</h1>
+    <button onclick="date()">Clique em mim</button>
+    <p id="p">Aqui vai aparecer algo...</p>
+    <script>
+        function date() {
+            let date = new Date();
+            const p = document.getElementById("p");
+            p.innerHTML = `O que eu recebi do sistema foi ${date}`;
+        }
+    </script>
+</body>
+</html>

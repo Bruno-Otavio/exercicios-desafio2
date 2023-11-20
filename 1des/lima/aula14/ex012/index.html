@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O número é par ou ímpar?</title>
+</head>
+<body>
+    <h1>É par ou ímpar?</h1>
+    <button onclick="check()">Clique para iniciar</button>
+    <p id="p">O resultado irá aparecer aqui...</p>
+    <script>
+        function check() {
+            let num = Number(prompt("Digite um número"));
+            let message = "";
+            const p = document.getElementById("p");
+
+            if (num % 2 == 0) {
+                message = "PAR";
+            } else {
+                message = "ÍMPAR";
+            }
+
+            p.innerHTML = `O número ${num} que foi digitado é <b>${message}</b>`;
+        }
+    </script>
+</body>
+</html>

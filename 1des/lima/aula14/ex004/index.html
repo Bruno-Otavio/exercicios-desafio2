@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados com JS</title>
+</head>
+<body>
+    <h1>Trabalhando com dados v2.0</h1>
+    <button type="button" onclick="nome()">Clique para começar</button>
+    <p id="p">O resultado irá aparecer aqui</p>
+    <script>
+        function nome() {
+            let nome = prompt("Qual é o seu nome?");
+            const p = document.getElementById("p");
+            p.innerHTML = `Olá, <b>${nome}</b>! É um grande prazer te conhecer!`;
+        }
+    </script>
+</body>
+</html>

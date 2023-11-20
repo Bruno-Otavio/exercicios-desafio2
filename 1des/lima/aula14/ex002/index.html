@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interação JS</title>
+</head>
+<body>
+    <h1>Interagindo com um botão</h1>
+    <button id="btn" onclick="click()">Clica em mim!</button>
+    <script>
+        button =  document.getElementById("btn");
+        button.addEventListener("click", (e) => {
+            window.alert("Você clicou no botão");
+        });
+
+        function click() {
+            window.alert("Você clicou no botão!");
+            console.log("Bobão");
+        }
+    </script>
+</body>
+</html>

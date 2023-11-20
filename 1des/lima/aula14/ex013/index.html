@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior valor</title>
+</head>
+<body>
+    <h1>Maior valor</h1>
+    <button onclick="great()">Clique para começar</button>
+    <p id="p">O resultado vai aparecer aqui...</p>
+    <script>
+        function great() {
+            let num1 = Number(prompt("Digite um número."));
+            let num2 = Number(prompt("Digite outro número."));
+            const p = document.getElementById("p");
+            
+            if (num1 > num2) {
+                p.innerHTML = `Analisando os valores ${num1} e ${num2}, o maior valor é ${num1}`;
+            } else if (num2 > num1) {
+                p.innerHTML = `Analisando os valores ${num1} e ${num2}, o maior valor é ${num2}`;
+            } else {
+                p.innerHTML = `Analisando os valores ${num1} e ${num2}, ambos são IGUAIS`;
+            }
+        }
+    </script>
+</body>
+</html>
