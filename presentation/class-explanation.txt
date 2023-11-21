@@ -1,0 +1,19 @@
+Class ---------------------------------------------------------------------------------------------------------------------------------------------
+
+In object-oriented programming, a class is a blueprint for creating objects (a particular data structure), providing initial values for state (member variables or attributes), and implementations of behavior (member functions or methods). The user-defined objects are created using the class keyword.
+
+The class needs a constructor to be able to receive personalized data.
+
+A class can have subclasses that can inherit all or some of the characteristics of the class. In relation to each subclass, the class becomes the superclass.
+
+Subclasses can also define their own methods and variables that are not part of their superclass.
+
+The structure of a class and its subclasses is called the class hierarchy.
+
+Instance ------------------------------------------------------------------------------------------------------------------------------------------
+
+An instance is a specific object created from a particular class.
+
+An instance variable is a variable that is associated with a specific instance of a class. For example, speed can be an instance variable for a Car object, and there can be two instances of Car, a red car and a blue car, and each car can have its own speed. Even though the variables are named the same across instances, the values are independent and changing the speed of the blue car will not affect the speed of the red car.
+(use class-example-2.png)
+
