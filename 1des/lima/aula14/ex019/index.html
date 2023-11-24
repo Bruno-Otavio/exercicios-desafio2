@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=q, initial-scale=1.0" />
+    <title>Múltiplas ações</title>
+  </head>
+  <body>
+    <h1>Múltiplas ações</h1>
+    <button onclick="calculate()">Clique para iniciar</button>
+    <p id="p">Clique no botão acima para começar</p>
+  </body>
+  <script>
+    var options =
+      " [1] Somar \n [2] Subtrair \n [3] Multiplicar \n [4] Dividir";
+
+    function calculate() {
+      let num1 = Number(prompt("Digite o primeiro valor."));
+      let num2 = Number(prompt("Digite o segundo valor."));
+      let operation = Number(prompt("O que vamos fazer?" + options));
+
+      const p = document.getElementById("p");
+
+      if (operation == 1) {
+        p.innerHTML = `${num1} + ${num2} = ${num1 + num2}`;
+      } else if (operation == 2) {
+        p.innerHTML = `${num1} - ${num2} = ${num1 - num2}`;
+      } else if (operation == 3) {
+        p.innerHTML = `${num1} * ${num2} = ${num1 * num2}`;
+      } else if (operation == 4) {
+        p.innerHTML = `${num1} / ${num2} = ${num1 / num2}`;
+      } else {
+        window.alert("Você não escolher uma opção válida.");
+      }
+    }
+  </script>
+</html>
