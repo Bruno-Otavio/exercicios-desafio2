@@ -8,6 +8,4 @@ do
 	git add .
 	git commit -m "$message"
 	git push
-	wget -O ${user}
-	wget -O ${pass}
 done
