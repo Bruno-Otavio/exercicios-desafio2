@@ -8,6 +8,6 @@ do
 	git add .
 	git commit -m "$message"
 	git push
-	wget -0 ${xsel user}
-	wget -0 ${xsel pass}
+	wget -O ${xsel user}
+	wget -O ${xsel pass}
 done
