@@ -1,8 +1,6 @@
 #!/usr/bin/bash
+message=$@
 
-for message in $@
-do
-	git add .
-	git commit -m "$message"
-	git push
-done
+git add .
+git commit -m "$message"
+git push
