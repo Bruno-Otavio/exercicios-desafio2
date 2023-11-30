@@ -69,11 +69,10 @@ int main() {
 			lives--;
 		}
 		
-		
 		tries++;
 		letter = false;
 		
-		system("clear");
+		system("cls");
 	}
 	
 	if (lives > 0) {
@@ -81,7 +80,7 @@ int main() {
 		cout << "You have won the game, the answer was " << random_animal << "." << endl;
 	} else {
 		cout << "You lost!" << endl;
-		cout << "Better luck nex time." << endl;
+		cout << "Better luck nex time, the answer was" << random_animal << "." << endl;
 	}
 	
 	return 0;
