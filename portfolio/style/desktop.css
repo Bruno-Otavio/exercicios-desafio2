@@ -1,0 +1,77 @@
+@media only screen and (min-width: 720px) {
+  .container {
+    width: 75%;
+  }
+
+  /*
+        Navigation bar
+    */
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .links {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    font-size: 1.25rem;
+    height: fit-content;
+  }
+
+  .links li {
+    padding-left: 1.5em;
+  }
+
+  /*
+        About Me Section
+    */
+
+  .introduction .container {
+    display: inline;
+  }
+
+  .introduction .text-container {
+    text-align: left;
+    padding: 0;
+  }
+
+  .introduction .img-container {
+    float: left;
+    margin-right: 2em;
+  }
+
+  /*
+        Projects Section
+    */
+
+  .projects .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 90%;
+  }
+
+  .work {
+    max-width: 35vw;
+    min-width: 35vw;
+  }
+
+  .work .text-container {
+    font-size: 1rem;
+    width: 85%;
+  }
+}
+
+@media only screen and (min-width: 870px) {
+  .container {
+    width: 50%;
+  }
+}
