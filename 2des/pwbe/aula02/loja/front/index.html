@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Lista de todos os clientes</h1>
+    </header>
+    <main>
+        <button><a href="form.html">Cadastrar</a></button>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Nascimento</th>
+                </tr>
+            </thead>
+            <tbody id="dados"></tbody>
+        </table>
+    </main>
+    <footer>
+        <h1>By Bruno Otávio</h1>
+    </footer>
+</body>
+<script>
+    const dados = document.getElementById("dados");
+    fetch("http://localhost:3000/clientes")
+        .then(res => res.json())
+        .then(res => {
+            res.forEach(cliente => {
+                dados.innerHTML += `
+                    <tr>
+                        <td>${cliente.id}</td>
+                        <td>${cliente.nome}</td>
+                        <td>${cliente.sobrenome}</td>
+                        <td>${cliente.nascimento}</td>
+                    </tr>
+                `;
+            });
+        });
+</script>
+</html>
