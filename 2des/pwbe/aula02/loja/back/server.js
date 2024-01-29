@@ -24,7 +24,7 @@ const create = (req, res) => {
     let nascimento = req.body.nascimento;
     let query = `INSERT INTO clientes(cpf, nome, sobrenome, nascimento) VALUE`;
     query += `('${cpf}', '${nome}', '${sobrenome}', '${nascimento}');`;
-    con.query(query,(err, result)=>{
+    con.query(query,(err, result)=>{    
         if(err)
             res.json(err);
         else

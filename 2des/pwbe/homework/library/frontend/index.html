@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Livraria</title>
+</head>
+<body>
+    <header>
+        <h1>Livraria Seu Jorge</h1>
+    </header>
+    <main>
+        <button><a href="./form.html">Cadastrar</a></button>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Book</th>
+                    <th>Author</th>
+                    <th>Lend Date</th>
+                    <th>Return Date</th>
+                </tr>
+            </thead>
+            <tbody id="data"></tbody>
+        </table>
+    </main>
+    <footer>
+        <h2>By Bruno and Guilherme</h2>
+    </footer>
+    <script>
+        const data = document.getElementById("data");
+        fetch("http://127.0.0.1:3000/books")
+            .then(res => res.json())
+            .then(res => {
+                res.forEach(order => {
+                    data.innerHTML += `
+                        <tr>
+                            <td>${order.id}</td:
+                            <td>${order.book_name}</td>
+                            <td>${order.author}</td>
+                            <td>${order.lend_date}</td>
+                            <td>${order.return_date}</td>
+                        </tr>
+                    `;
+                });
+            });
+    </script>
+</body>
+</html>
