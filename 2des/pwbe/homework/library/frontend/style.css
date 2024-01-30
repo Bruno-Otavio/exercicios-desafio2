@@ -69,3 +69,12 @@ table tbody tr.active-row {
     font-weight: bold;
     color: gray;
 }
+
+table tr img {
+    width: 25px;
+    height: auto;
+}
+
+table tbody tr img {
+    cursor: pointer;
+}

@@ -20,6 +20,8 @@
                     <th>Author</th>
                     <th>Lend Date</th>
                     <th>Return Date</th>
+                    <!--th class="remove"><img src="./assets/8666681_edit_icon.svg" alt="remove"></th!-->
+                    <th class="remove"><img src="./assets/trash-icon.svg" alt="remove"></th>
                 </tr>
             </thead>
             <tbody id="data"></tbody>
@@ -41,6 +43,8 @@
                             <td>${order.author}</td>
                             <td>${order.lend_date.split("T")[0]}</td>
                             <td>${order.return_date.split("T")[0]}</td>
+                            <!--td><a href="#"><img src="./assets/8666681_edit_icon.svg" alt="edit"></a></td!-->
+                            <td><a href="http://127.0.0.1:3000/delete/${order.id}"><img src="./assets/trash-icon.svg" alt="remove"></a></td>
                         </tr>
                     `;
                 });
