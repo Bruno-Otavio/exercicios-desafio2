@@ -38,5 +38,34 @@ form div input {
 }
 
 table {
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     margin: 1em;
+}
+
+table thead tr {
+    background-color: lightgray;
+    text-align: left;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+}
+
+table tbody tr {
+    border-bottom: 1px solid lightgray;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid gray;
+}
+
+table tbody tr.active-row {
+    font-weight: bold;
+    color: gray;
 }

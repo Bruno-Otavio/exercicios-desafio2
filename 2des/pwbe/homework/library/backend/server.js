@@ -8,6 +8,7 @@ const port = 3000;
 
 const connection = mysql.createConnection({
     user: "root",
+    password: "root",
     host: "localhost",
     database: "library",
 });
@@ -26,7 +27,6 @@ const newOrder = (req, res) => {
     connection.query(query, (err, result) => {
         if (err) res.json(err);
         else res.redirect("http://127.0.0.1:5500/frontend/index.html");
-        console.log(result);
     });
 }
 

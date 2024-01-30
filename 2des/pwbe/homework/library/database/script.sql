@@ -6,8 +6,8 @@ create table Books(
     id integer primary key unique auto_increment,
     book_name varchar(50) not null,
     author varchar(50) not null,
-    lend_date date not null,
-    return_date date not null
+    lend_date DATE not null,
+    return_date DATE not null
 );
 
 insert into Books(book_name, author, lend_date, return_date) values

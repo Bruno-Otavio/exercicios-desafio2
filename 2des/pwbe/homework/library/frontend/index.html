@@ -36,11 +36,11 @@
                 res.forEach(order => {
                     data.innerHTML += `
                         <tr>
-                            <td>${order.id}</td:
+                            <td>${order.id}</td>
                             <td>${order.book_name}</td>
                             <td>${order.author}</td>
-                            <td>${order.lend_date}</td>
-                            <td>${order.return_date}</td>
+                            <td>${order.lend_date.split("T")[0]}</td>
+                            <td>${order.return_date.split("T")[0]}</td>
                         </tr>
                     `;
                 });

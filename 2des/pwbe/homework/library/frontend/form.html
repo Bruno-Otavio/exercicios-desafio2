@@ -33,6 +33,13 @@
                 <input type="submit" value="Enviar">
                 <input type="reset" value="Limpar">
             </div>
+            <script>
+                const lend = document.querySelector("#lend-date");
+                lend.addEventListener("change", () => {
+                    const return_date = document.querySelector("#return-date");
+                    return_date.value = lend.value;
+                });
+            </script>
         </form>
     </main>
     <footer>
