@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    
     <title>Livraria</title>
 </head>
 <body>
@@ -20,8 +21,10 @@
                     <th>Author</th>
                     <th>Lend Date</th>
                     <th>Return Date</th>
-                    <!--th class="remove"><img src="./assets/8666681_edit_icon.svg" alt="remove"></th!-->
                     <th class="remove"><img src="./assets/trash-icon.svg" alt="remove"></th>
+                    <th class="edit"><img src="./assets/8666681_edit_icon.svg" alt="edit"></th>
+                    <th class="apply hidden"><img src="./assets/check.svg" alt="apply"></th>
+                    <th class="cancel hidden"><img src="./assets/close.svg" alt="cancel"></th>
                 </tr>
             </thead>
             <tbody id="data"></tbody>
@@ -30,25 +33,6 @@
     <footer>
         <h2>By Bruno and Guilherme</h2>
     </footer>
-    <script>
-        const data = document.getElementById("data");
-        fetch("http://127.0.0.1:3000/books")
-            .then(res => res.json())
-            .then(res => {
-                res.forEach(order => {
-                    data.innerHTML += `
-                        <tr>
-                            <td>${order.id}</td>
-                            <td>${order.book_name}</td>
-                            <td>${order.author}</td>
-                            <td>${order.lend_date.split("T")[0]}</td>
-                            <td>${order.return_date.split("T")[0]}</td>
-                            <!--td><a href="#"><img src="./assets/8666681_edit_icon.svg" alt="edit"></a></td!-->
-                            <td><a href="http://127.0.0.1:3000/delete/${order.id}"><img src="./assets/trash-icon.svg" alt="remove"></a></td>
-                        </tr>
-                    `;
-                });
-            });
-    </script>
 </body>
+<script src="./main.js"></script>
 </html>

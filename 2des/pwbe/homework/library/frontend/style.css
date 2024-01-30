@@ -4,6 +4,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.hidden {
+    display: none;
+}
+
 body {
     display: flex;
     flex-direction: column;
