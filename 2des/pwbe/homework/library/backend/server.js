@@ -8,7 +8,7 @@ const port = 3000;
 
 const connection = mysql.createConnection({
     user: "root",
-    password: "root",
+    //password: "root",
     host: "localhost",
     database: "library",
 });
@@ -49,10 +49,10 @@ const deleteOrder = (req, res) => {
 const updateOrder = (req, res) => {
     const order = {
         id: 0,
-        book: "",
-        author: "",
-        lend_date: "",
-        return_date: "",
+        book: req.book_name,
+        author: req.author,
+        lend_date: req.lend_date,
+        return_date: req.return_date,
     };
 
     let query = `
@@ -64,6 +64,14 @@ const updateOrder = (req, res) => {
     connection.query(query, (req, result) => {
         if (err) req.json(err);
         else res.redirect("http://127.0.0.1:5500/frontend/index.html");
+    });
+}
+
+const getBook = (req, res) => {
+    const query = `SELECT * FROM Books WHERE id = ${req.params.id}`;
+    connection.query(query, (err, rows, fields) => {
+        if (err) req.json(err);
+        else res.send(rows);
     });
 }
 
@@ -82,6 +90,7 @@ app.get("/", (req, res) => {
 
 app.post("/books", newOrder);
 app.get("/books", read);
+app.get("/books/(:id)", getBook);
 
 app.get("/delete/(:id)", deleteOrder);
 app.post("/update", updateOrder);
