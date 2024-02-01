@@ -5,10 +5,11 @@ const bodyParser = require("body-parser");
 
 const app = express();
 const port = 3000;
+const front_url = "http://127.0.0.1:5500/frontend/index.html";
 
 const connection = mysql.createConnection({
     user: "root",
-    password: "root",
+    //password: "root",
     host: "localhost",
     database: "library",
 });
@@ -26,7 +27,7 @@ const newOrder = (req, res) => {
 
     connection.query(query, (err, result) => {
         if (err) res.json(err);
-        else res.redirect("http://127.0.0.1:5500/frontend/index.html");
+        else res.redirect(front_url);
     });
 }
 
@@ -42,28 +43,29 @@ const deleteOrder = (req, res) => {
     let query = `DELETE FROM Books WHERE id = ${id};`;
     connection.query(query, (err, result) => {
         if (err) res.json(err);
-        else res.redirect("http://127.0.0.1:5500/frontend/index.html");
+        else res.redirect(front_url);
     });
 }
 
 const updateOrder = (req, res) => {
     const order = {
         id: req.body.id,
-        book: req.book_name,
-        author: req.author,
-        lend_date: req.lend_date,
-        return_date: req.return_date,
+        book: req.body.book_name,
+        author: req.body.author,
+        lend_date: req.body.lend_date,
+        return_date: req.body.return_date,
     };
 
-    let query = `
-        UPDATE Books SET book_name = ${order.book} WHERE id = ${order.id};
-        UPDATE Books SET author = ${order.author} WHERE id = ${order.id};
-        UPDATE Books SET lend_date = ${order.lend_date} WHERE id = ${order.id};
-        UPDATE Books SET return_date = ${order.return_date} WHERE id = ${order.id};
+    let query = ` UPDATE Books SET
+        book_name = ${order.book},
+        author = ${order.author},
+        lend_date = ${order.lend_date},
+        return_date = ${order.return_date}
+        WHERE id = ${order.id};
     `;
-    connection.query(query, (req, result) => {
+    connection.query(query, (err, req, result) => {
         if (err) req.json(err);
-        else res.redirect("http://127.0.0.1:5500/frontend/index.html");
+        else res.redirect(front_url);
     });
 }
 
