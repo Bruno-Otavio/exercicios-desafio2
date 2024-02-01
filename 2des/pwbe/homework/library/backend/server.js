@@ -8,7 +8,7 @@ const port = 3000;
 
 const connection = mysql.createConnection({
     user: "root",
-    //password: "root",
+    password: "root",
     host: "localhost",
     database: "library",
 });
@@ -48,7 +48,7 @@ const deleteOrder = (req, res) => {
 
 const updateOrder = (req, res) => {
     const order = {
-        id: 0,
+        id: req.body.id,
         book: req.book_name,
         author: req.author,
         lend_date: req.lend_date,
@@ -76,7 +76,7 @@ const getBook = (req, res) => {
 }
 
 connection.connect((err => {
-    if (err) throw err;
+    if (err) res.json(err);
     console.log("MySQL Connected");
 }));
 

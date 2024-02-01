@@ -92,13 +92,24 @@ function toggleEdit(item) {
 
 function applyChanges(item) {
     const data = {
+        id: item.querySelector(".id").innerHTML,
         book_name: item.querySelector(".book-name").innerHTML,
         author: item.querySelector(".author").innerHTML,
         lend_date: item.querySelector(".lend-date").value,
         return_date: item.querySelector(".return-date").value,
     };
 
-    fetch("http://127.0.0.1:3000/update", {method: "POST", body: data});    
+    const request = new Request("http://127.0.0.1:3000/update", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: new Headers({
+            "Content-Type": "application/json"
+        })
+    });
+
+    fetch(request)
+        .then(res => (res.json()))
+        .then(res => console.log(res));
 
     editable(item, "false");
 }
@@ -107,15 +118,15 @@ function cancelChanges(item) {
     const id = item.querySelector(".id").innerHTML;
 
     fetch(`http://127.0.0.1:3000/books/${id}`)
-    .then(res => res.json())
-    .then(res => {
-        res.forEach((order) => {
-            item.querySelector(".book-name").innerHTML = order.book_name;
-            item.querySelector(".author").innerHTML = order.author;
-            item.querySelector(".lend-date").innerHTML = order.lend_date.split("T")[0];
-            item.querySelector(".return-date").innerHTML = order.return_date.split("T")[0];
-        })
-    });
+        .then(res => res.json())
+        .then(res => {
+            res.forEach((order) => {
+                item.querySelector(".book-name").innerHTML = order.book_name;
+                item.querySelector(".author").innerHTML = order.author;
+                item.querySelector(".lend-date").innerHTML = order.lend_date.split("T")[0];
+                item.querySelector(".return-date").innerHTML = order.return_date.split("T")[0];
+            })
+        });
 
     editable(item, "false");
 }
