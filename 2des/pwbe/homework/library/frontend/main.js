@@ -37,7 +37,8 @@ table.addEventListener("click", (event) => {
     }
 });
 
-function editable(item, condition) {
+function editable(item, bool) {
+    const id = item.querySelector(".id").innerHTML;
     const fields = [
         item.querySelector(".book-name"),
         item.querySelector(".author"),
@@ -45,27 +46,41 @@ function editable(item, condition) {
         item.querySelector(".return-date")
     ];
 
-    fields.forEach((field) => {
-        field.contentEditable = condition;
-
-        const input_date = document.createElement("input")
-        input_date.type = "date";
-        if (field.classList.contains("lend-date")) {
-            field.innerHTML = "";
-            field.append(input_date);
-        } else if(field.classList.contains("return-date")) {
-            field.innerHTML = "";
-            field.append(input_date);
-        }
-    });
-
-    if (condition == "true") {
+    if (bool == "true") {
         fields.forEach((field) => {
+            field.contentEditable = bool;
             field.style.color = "blue";
+
+            const input_date = document.createElement("input")
+            input_date.type = "date";
+            if (field.classList.contains("lend-date")) {
+                field.innerHTML = "";
+                input_date.classList.add("input-lend-date");
+                field.append(input_date);
+            } else if(field.classList.contains("return-date")) {
+                field.innerHTML = "";
+                input_date.classList.add("input-return-date");
+                field.append(input_date);
+            }
         });
-    } else if (condition == "false") {
+    } else if (bool == "false") {
         fields.forEach((field) => {
+            field.contentEditable = bool;
             field.style.color = "black";
+
+            if (field.classList.contains("lend-date")) {
+                fetch(`http://127.0.0.1:3000/books/${id}`)
+                    .then(res => res.json())
+                    .then(res => {res.forEach((order) => {
+                        field.innerHTML = order.lend_date.split("T")[0];
+                    })});
+            } else if(field.classList.contains("return-date")) {
+                fetch(`http://127.0.0.1:3000/books/${id}`)
+                    .then(res => res.json())
+                    .then(res => {res.forEach((order) => {
+                        field.innerHTML = order.return_date.split("T")[0];
+                    })});
+            }
         });
     }
 }
@@ -95,9 +110,13 @@ function applyChanges(item) {
         id: item.querySelector(".id").innerHTML,
         book_name: item.querySelector(".book-name").innerHTML,
         author: item.querySelector(".author").innerHTML,
-        lend_date: item.querySelector(".lend-date").value,
-        return_date: item.querySelector(".return-date").value,
+        lend_date: new Date(item.querySelector(".input-lend-date").value),
+        return_date: new Date(item.querySelector(".input-return-date").value),
     };
+
+    console.log(item.querySelector(".input-lend-date").value);
+    console.log(data);
+    console.log(JSON.stringify(data));
 
     const request = new Request("http://127.0.0.1:3000/update", {
         method: "POST",
@@ -110,7 +129,7 @@ function applyChanges(item) {
     fetch(request)
         .then(res => (res.json()))
         .then(res => console.log(res));
-
+        
     editable(item, "false");
 }
 
