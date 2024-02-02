@@ -9,7 +9,7 @@ const front_url = "http://127.0.0.1:5500/frontend/index.html";
 
 const connection = mysql.createConnection({
     user: "root",
-    password: "root",
+    //password: "root",
     host: "localhost",
     database: "library",
 });
@@ -63,9 +63,9 @@ const updateOrder = (req, res) => {
         return_date = '${order.return_date}'
         WHERE id = ${order.id};
     `;
-    connection.query(query, (err, req, result) => {
+    connection.query(query, (err, result) => {
         if (err) res.json(err);
-        else res.redirect(front_url);
+        //else res.redirect(front_url);
     });
 }
 

@@ -28,12 +28,15 @@ table.addEventListener("click", (event) => {
 
     if (button.classList.contains("edit")) {
         toggleEdit(item);
+        editable(item, "true");
     } else if (button.classList.contains("apply")) {
+        applyChanges(item);
         toggleEdit(item);
-        applyChanges(item)
+        editable(item, "false");
     } else if (button.classList.contains("cancel")){
-        toggleEdit(item);
         cancelChanges(item);
+        toggleEdit(item);
+        editable(item, "false");
     }
 });
 
@@ -51,17 +54,21 @@ function editable(item, bool) {
             field.contentEditable = bool;
             field.style.color = "blue";
 
-            const input_date = document.createElement("input")
+            const input_date = document.createElement("input");
             input_date.type = "date";
             if (field.classList.contains("lend-date")) {
+                const old_date = field.value;
                 field.innerHTML = "";
                 input_date.classList.add("input-lend-date");
+                input_date.value = old_date;
                 field.append(input_date);
             } else if(field.classList.contains("return-date")) {
+                const old_date = field.value;
                 field.innerHTML = "";
                 input_date.classList.add("input-return-date");
+                input_date.value = old_date;
                 field.append(input_date);
-            }
+            };
         });
     } else if (bool == "false") {
         fields.forEach((field) => {
@@ -86,8 +93,6 @@ function editable(item, bool) {
 }
 
 function toggleEdit(item) {
-    editable(item, "true");
-
     const template_edit = document.querySelector(".edit-template");
     const template_apply = document.querySelector(".apply-template");
     const template_cancel = document.querySelector(".cancel-template");
@@ -114,14 +119,11 @@ function applyChanges(item) {
         return_date: new Date(item.querySelector(".input-return-date").value),
     };
 
-    console.log(item.querySelector(".input-lend-date").value);
-    console.log(data);
-    console.log(JSON.stringify(data));
-
     const request = new Request("http://127.0.0.1:3000/update", {
         method: "POST",
         body: JSON.stringify(data),
         headers: new Headers({
+            accept: 'application/json',
             "Content-Type": "application/json"
         })
     });
@@ -129,8 +131,6 @@ function applyChanges(item) {
     fetch(request)
         .then(res => (res.json()))
         .then(res => console.log(res));
-        
-    editable(item, "false");
 }
 
 function cancelChanges(item) {
@@ -146,6 +146,4 @@ function cancelChanges(item) {
                 item.querySelector(".return-date").innerHTML = order.return_date.split("T")[0];
             })
         });
-
-    editable(item, "false");
 }
