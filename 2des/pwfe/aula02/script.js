@@ -1,6 +1,6 @@
 // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
 
-const api_key = "be6f65d50be864f29d21578076df4abe";
+const api_key = "";
 
 function colocarDadosNaTela(dados) {
     document.querySelector(".cidade").innerHTML = dados.name;
