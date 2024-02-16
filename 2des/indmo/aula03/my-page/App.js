@@ -14,32 +14,41 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <View style={styles.profileContainer}>
-        <Image 
-          source={{uri: "./assets/milia-rage.png"}}
-          style={styles.image}
-        />
-        <Text style={styles.title}><h1>Bruno Otávio</h1></Text>
-      </View>
-      <View style={styles.profileContainer}>
-        <Text style={styles.title}><h2>Dados</h2></Text>
-        <Text style={styles.paragraph}>
-          <p>Morador da cidade de Pedreira</p>
-          <p>Capaz de diversas habilidadas</p>
-        </Text>
-      </View>
-      <View style={styles.profileContainer}>
-        <Text style={styles.title}><h2>Formação</h2></Text>
         <View>
-          <Text style={styles.paragraph}>
-            Curso Técnico de Desenvolvimento de Sistemas - SENAI 
-          </Text>
+          <View style={styles.alignItems}>
+            <Image 
+              source={{uri: "./assets/milia-rage.png"}}
+              style={styles.image}
+            />
+          </View>
+          <Text style={styles.title}><h1>Bruno Otávio</h1></Text>
         </View>
-      </View>
-      <View style={styles.profileContainer}>
-        <Text style={styles.title}><h3>GitHub</h3></Text>
-        <Text>
-          <a style={{color: colors.white}} href="https://github.com/Bruno-Otavio">Bruno-Otavio</a>
-        </Text>
+        <View>
+          <View style={styles.alignItems}>
+            <Text style={styles.title}><h2>Dados</h2></Text>
+            <Text style={styles.paragraph}>
+              <p>Morador da cidade de Pedreira</p>
+              <p>Capaz de diversas habilidadas</p>
+              <p>Gosto de Guilty Gear</p>
+            </Text>
+          </View>
+        </View>
+        <View>
+          <Text style={styles.title}><h2>Formação</h2></Text>
+          <View>
+            <Text style={styles.paragraph}>
+              Curso Técnico de Desenvolvimento de Sistemas - SENAI
+            </Text>
+          </View>
+        </View>
+        <View>
+          <View style={styles.alignItems}>
+            <Text style={styles.title}><h2>GitHub</h2></Text>
+            <Text>
+              <a style={{color: colors.white, fontSize: 25}} href="https://github.com/Bruno-Otavio">Bruno-Otavio</a>
+            </Text>
+          </View>
+        </View>
       </View>
     </View>
   );
@@ -53,6 +62,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   profileContainer: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent:"center",
     backgroundColor: colors.black,
     borderRadius: 25,
     marginTop: 15,
@@ -75,5 +87,10 @@ const styles = StyleSheet.create({
   paragraph: {
     color: colors.white,
     fontSize: 15,
+  },
+  alignItems: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center"
   }
 });
