@@ -10,6 +10,12 @@ export default function App() {
   );
 }
 
+const Goku = () => {
+  return (
+    <p></p>
+  );
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
