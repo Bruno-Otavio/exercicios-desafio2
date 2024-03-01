@@ -7,7 +7,7 @@ CREATE TABLE Cliente(
     nome varchar(50) not null,
     email varchar(50) not null,
     endereco varchar(50) not null,
-    telefone integer not null
+    telefone varchar(20) not null
 );
 
 CREATE TABLE Funcionario(
