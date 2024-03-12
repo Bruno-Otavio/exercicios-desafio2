@@ -22,4 +22,22 @@ router.post("/funcionarios", funcionarios.create);
 router.put("/funcionarios/:id", funcionarios.update);
 router.delete("/funcionarios/:id", funcionarios.deleteData);
 
+router.get("/entregas", entrega.getAll)
+router.get("/entregas/:id", entrega.get);
+router.post("/entregas", entrega.create);
+router.put("/entregas/:id", entrega.update);
+router.delete("/entregas/:id", entrega.deleteData);
+
+router.get("/pedidos", pedido.getAll)
+router.get("/pedidos/:id", pedidos.get);
+router.post("/pedidos", pedidos.create);
+router.put("/pedidos/:id", pedidos.update);
+router.delete("/pedidos/:id", pedidos.deleteData);
+
+router.get("/veiculos", veiculos.getAll)
+router.get("/veiculos/:id", veiculos.get);
+router.post("/veiculos", veiculos.create);
+router.put("/veiculos/:id", veiculos.update);
+router.delete("/veiculos/:id", veiculos.deleteData);
+
 module.exports = router;

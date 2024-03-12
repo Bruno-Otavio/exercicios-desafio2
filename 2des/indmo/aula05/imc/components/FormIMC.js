@@ -1,86 +1,85 @@
-import { 
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Dimensions,
-  TouchableOpacity
-} from "react-native";
-
-import React from "react";
+import { View, StyleSheet, Text, TextInput, TouchableOpacity } from "react-native";
+import React from 'react';
 import MaskInput from "react-native-mask-input";
 
-// Pegar dimensão da tela
-const { width, height } = Dimensions.get("screen");
+export default function FormIMC() {
+    const [peso, setPeso] = React.useState('');
+    const [altura, setAltura] = React.useState('');
+    const [imc, setImc] = React.useState('');
 
-const user = {
-  username: "user",
-  password: "123456"
-};
-
-export default function LoginForm({navigation}) {
-  const [ username, setUsername ] = React.useState("user");
-  const [ pass, setPass ] = React.useState("123456");
-
-  const validaUsuario = () =: {
-    if (pass === user.pass && username === user.username) {
-      navigation.navigate("telaIMC", { name: "telaIMC" });
+    const calcImc = () => {
+        const numberPeso = Number(peso);
+        const numberAltura = Number(altura);
+        setImc((numberPeso / (numberAltura ** 2)).toFixed(2))
     }
-  }
 
-  return (
-    <View style={styles.container}>
-      <Text>Formulário de Cadastro</Text> 
-      <View style={styles.form}>
-        {/*USERNAME*/}
-        <MaskInput
-          style={styles.textInput}
-          onChangeText={(masked, unmasked) => setUsername(masked)}
-          value={username}
-          placeholder="Digite seu usuário"
-        />
-        {/*PASSWORD*/}
-        <MaskInput
-          mask={() => [/\d/, /\d/, /\d/, /\d/, /\d/, /\d/]}
-          style={styles.textInput}
-          onChangeText={(masked, unmasked) => setPass(masked)}
-          value={pass}
-          placholder="Digite sua senha"
-          keyboardType="numeric"
-        />
-        <TouchableOpacity onPress={validaUsuario}>
-          <Text>Login</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
+    return (
+        <>
+            <View style={styles.container}>
+                <View style={styles.content}>
+                    <Text>Calculadora de IMC</Text>
+
+                    <MaskInput
+                        mask={[/\d/, /\d/, /\d/, '.', /\d/]}
+                        style={styles.textInput}
+                        onChangeText={(masked, unmasked) => setPeso(masked)}
+                        value={peso}
+                        placeholder="Digite seu peso"
+                        keyboardType="numeric"
+                    />
+
+                    <MaskInput
+                        mask={[/\d/, '.', /\d/, /\d/]}
+                        style={styles.textInput}
+                        onChangeText={(masked, unmasked) => setAltura(masked)}
+                        value={altura}
+                        placeholder="Digite sua altura"
+                        keyboardType="numeric"
+                    />
+
+                    <TouchableOpacity
+                        style={styles.button}
+                        onPress={calcImc}
+                    >
+                        <Text>Calcular</Text>
+                    </TouchableOpacity>
+                    <Text>Seu IMC é: {imc}</Text>
+                </View>
+
+            </View>
+        </>
+    )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 15
-  },
-  form: {
-    width: width ,
-    padding: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 10,
-   },
-  textInput: {
-    padding: 5,
-    width: 200,
-    height: 40,
-    borderWidth: 1,
-    borderColor: '#006eff',
-    borderWidth: 1,
-    borderTopWidth: 0,
-    borderLeftWidth: 0,
-    borderRightWidth: 0,    
-  },
-);
-
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    content: {
+        gap: 10,
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    textInput: {
+        padding: 5,
+        height: 40,
+        width: 200,
+        borderColor: '#006eff',
+        borderWidth: 1,
+        borderTopWidth: 0,
+        borderLeftWidth: 0,
+        borderRightWidth: 0
+    },
+    button: {
+        alignItems: "center",
+        backgroundColor: "#fff",
+        borderColor: 'gray',
+        borderWidth: 1,
+        padding: 10,
+        borderRadius: 10
+    }
+});
