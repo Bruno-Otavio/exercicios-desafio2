@@ -26,19 +26,18 @@ class CRUD {
             if (err) res.status(400).json(err).end();
             else {
                 const newItem = req.body;
-                newItem.id = result.insetId;
-                res.status(201).json()
+                res.status(201).json(newItem).end();
             }
         });
     }
 
     update = (req, res) => {
-        const data = { ...req.body };
+        const data = { ...req.params, ...req.body };
         connect.query(this.queries(data).update, (err, result) => {
             if (err) res.status(400).json(err).end();
             else {
                 if (result.affectedRows > 0) {
-                    res.status(202).json(result).end();
+                    res.status(202).json(req.body).end();
                 } else {
                     res.status(404).json(err).end();
                 }
@@ -52,7 +51,7 @@ class CRUD {
             if (err) res.status(404).json(err).end();
             else {
                 if (result.affectedRows > 0) {
-                    res.status(202).json(result);
+                    res.status(202).json(result).end();
                 } else {
                     result.message = "ID not found";
                     res.status(404).json(result).end();
