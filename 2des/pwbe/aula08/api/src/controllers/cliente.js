@@ -1,4 +1,5 @@
 const con = require('../connect/mysql');
+const composite = require("../patters/composite-clientes");
 
 const createCliente = (req, res) => {
     const { cpf, nome, telefone } = req.body;
@@ -70,7 +71,7 @@ const readClientes = (req, res) => {
             if (err) {
                 res.json(err);
             } else {
-                res.json(result);
+                res.json(composite.compositeClientes(result));
             }
         });
     } else {
@@ -79,7 +80,7 @@ const readClientes = (req, res) => {
             if (err) {
                 res.json(err);
             } else {
-                res.json(result);
+                res.json(composite.compositeClientes(result));
             }
         });
     }

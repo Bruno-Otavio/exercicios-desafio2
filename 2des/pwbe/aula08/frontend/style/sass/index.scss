@@ -1,0 +1,27 @@
+@use "navbar.scss";
+@use "content.scss";
+
+@import "shadow-string";
+@import "colors";
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Quicksand";
+}
+
+body {
+    background-color: $color-lightblue;
+}
+
+.hidden {
+    display: none;
+}
+
+.title {
+    font-size: 2.25rem;
+    color: $color-cinnabar;
+    font-weight: bold;
+}

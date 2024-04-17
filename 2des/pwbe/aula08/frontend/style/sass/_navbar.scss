@@ -1,0 +1,83 @@
+@import "colors";
+@import "shadow-string";
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $color-charcoal;
+
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    box-shadow: 0px 5px 10px $color-powderblue;
+
+    margin-bottom: 3rem;
+    padding: 1rem;
+
+    .nav-icon {
+        position: absolute;
+        left: 0%;
+
+        width: 10rem;
+        height: auto;
+    }
+
+    .nav-items {
+        height: fit-content;
+        position: relative;
+
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+
+        .nav-item {
+            font-size: larger;
+            text-decoration: none;
+            font-weight: bold;
+
+            color: $color-lightblue;
+            @include long-shadow($color-powderblue, $color-charcoal, 3);
+            backdrop-filter: blur(10px);
+
+            transition: text-shadow ease-in-out 200ms;
+        }
+
+        .nav-item:hover {
+            @include long-shadow($color-powderblue, $color-charcoal, 6);
+        }
+
+        .home {
+            color: $color-cinnabar;
+            @include long-shadow($color-cinnabar, $color-charcoal, 3);
+            font-size: xx-large;
+
+            margin-right: 1.5rem;
+            margin-left: 1.5rem;
+        }
+
+        .home:hover {
+            @include long-shadow($color-cinnabar, $color-charcoal, 6);
+        }
+    }
+
+    .nav-items::before {
+        content: "";
+        position: absolute;
+        width: 10rem;
+        border: 1px solid $color-powderblue;
+
+        top: 65%;
+        right: 100%;
+    }
+
+    .nav-items::after {
+        content: "";
+        position: absolute;
+        width: 10rem;
+        border: 1px solid $color-powderblue;
+
+        top: 65%;
+        left: 100%;
+    }
+}
