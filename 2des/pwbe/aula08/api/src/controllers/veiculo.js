@@ -16,7 +16,7 @@ const createVeiculo = (req, res) => {
         res.json(erro);
         return;
     }
-    const sql = "INSERT INTO veiculo (placa, marca, modelo, tipo, diaria) VALUES (?,?,?,?,?)";
+    const sql = "INSERT INTO Veiculo (placa, marca, modelo, tipo, diaria) VALUES (?,?,?,?,?)";
     con.query(sql, [placa, marca, modelo, tipo, diaria], (err, result) => {
         if (err) {
             if (err.code == "ER_DUP_ENTRY") {
@@ -31,7 +31,7 @@ const createVeiculo = (req, res) => {
 }
 
 const readVeiculos = (req, res) => {
-    const sql = "SELECT * FROM veiculo";
+    const sql = "SELECT * FROM Veiculo";
     con.query(sql, (err, result) => {
         if (err) {
             res.json(err);
@@ -42,7 +42,7 @@ const readVeiculos = (req, res) => {
 }
 
 const readVeiculo = (req, res) => {
-    const sql = "SELECT * FROM veiculo WHERE placa LIKE ?";
+    const sql = "SELECT * FROM Veiculo WHERE placa LIKE ?";
     con.query(sql, `%${[req.params.placa]}%`, (err, result) => {
         if (err) {
             res.json(err);
@@ -68,7 +68,7 @@ const updateVeiculo = (req, res) => {
         res.json(erro);
         return;
     }
-    const sql = "UPDATE veiculo SET marca = ?, modelo = ?, tipo = ?, diaria = ? WHERE placa = ?";
+    const sql = "UPDATE Veiculo SET marca = ?, modelo = ?, tipo = ?, diaria = ? WHERE placa = ?";
     con.query(sql, [marca, modelo, tipo, diaria, placa], (err, result) => {
         if (err) {
             res.json(err);
@@ -83,7 +83,7 @@ const updateVeiculo = (req, res) => {
 }
 
 const deleteVeiculo = (req, res) => {
-    const sql = "DELETE FROM veiculo WHERE placa = ?";
+    const sql = "DELETE FROM Veiculo WHERE placa = ?";
     con.query(sql, [req.params.placa], (err, result) => {
         if (err) {
             if(err.code == "ER_ROW_IS_REFERENCED_2"){

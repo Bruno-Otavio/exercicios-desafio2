@@ -13,7 +13,7 @@ const createTelefone = (req, res) => {
         res.json(erro);
         return;
     }
-    const sql = "INSERT INTO telefone (cpf, numero) VALUES (?,?)";
+    const sql = "INSERT INTO Telefone (cpf, numero) VALUES (?,?)";
     con.query(sql, [cpf, telefone], (err, result) => {
         if (err) {
             if (err.code == "ER_DUP_ENTRY") {
@@ -33,7 +33,7 @@ const createTelefone = (req, res) => {
 
 const readTelefones = (req, res) => {
     if (!req.params.cpf) {
-        const sql = "SELECT * FROM telefone";
+        const sql = "SELECT * FROM Telefone";
         con.query(sql, (err, result) => {
             if (err) {
                 res.json(err);
@@ -42,7 +42,7 @@ const readTelefones = (req, res) => {
             }
         });
     } else {
-        const sql = "SELECT * FROM telefone WHERE cpf LIKE ?";
+        const sql = "SELECT * FROM Telefone WHERE cpf LIKE ?";
         con.query(sql, `%${[req.params.cpf]}%`, (err, result) => {
             if (err) {
                 res.json(err);
@@ -66,7 +66,7 @@ const updateTelefone = (req, res) => {
         res.json(erro);
         return;
     }
-    const sql = "UPDATE telefone SET numero = ? WHERE numero = ?";
+    const sql = "UPDATE Telefone SET numero = ? WHERE numero = ?";
     con.query(sql, [novo_numero, numero], (err, result) => {
         if (err) {
             res.json(err);
@@ -81,7 +81,7 @@ const updateTelefone = (req, res) => {
 }
 
 const deleteTelefone = (req, res) => {
-    const sql = "DELETE FROM telefone WHERE numero = ?";
+    const sql = "DELETE FROM Telefone WHERE numero = ?";
     con.query(sql, [req.params.numero], (err, result) => {
         if (err) {
             res.json(err);

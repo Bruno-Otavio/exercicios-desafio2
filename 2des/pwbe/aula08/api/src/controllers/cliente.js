@@ -20,7 +20,7 @@ const createCliente = (req, res) => {
         return;
     }
     if (!telefone) {
-        const sql = "INSERT INTO cliente (cpf, nome_cliente) VALUES (?,?)";
+        const sql = "INSERT INTO Cliente (cpf, nome_cliente) VALUES (?,?)";
         con.query(sql, [cpf, nome], (err, result) => {
             if (err) {
                 if (err.code == "ER_DUP_ENTRY")
@@ -32,7 +32,7 @@ const createCliente = (req, res) => {
             }
         });
     } else {
-        const sql = "INSERT INTO cliente (cpf, nome_cliente) VALUES (?,?)";
+        const sql = "INSERT INTO Cliente (cpf, nome_cliente) VALUES (?,?)";
         con.query(sql, [cpf, nome], (err, result) => {
             if (err) {
                 if (err.code == "ER_DUP_ENTRY") {
@@ -99,7 +99,7 @@ const updateCliente = (req, res) => {
         res.status(400).json(erro);
         return;
     }
-    const sql = "UPDATE cliente SET nome_cliente = ? WHERE cpf = ?";
+    const sql = "UPDATE Cliente SET nome_cliente = ? WHERE cpf = ?";
     con.query(sql, [nome, cpf], (err, result) => {
         if (err) {
             res.status(500).json(err);
@@ -114,7 +114,7 @@ const updateCliente = (req, res) => {
 }
 
 const deleteCliente = (req, res) => {
-    const sql = "DELETE FROM cliente WHERE cpf = ?";
+    const sql = "DELETE FROM Cliente WHERE cpf = ?";
     con.query(sql, [req.params.cpf], (err, result) => {
         if (err) {
             if (err.code == "ER_ROW_IS_REFERENCED_2") {

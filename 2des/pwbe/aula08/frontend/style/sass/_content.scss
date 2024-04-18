@@ -1,0 +1,47 @@
+@import "colors";
+@import "shadow-string";
+
+main {
+    display: grid;
+    place-items: center;
+    
+    .container-cars {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+
+        .car {
+            background-color: $color-charcoal;
+
+            border: 3px solid $color-cinnabar;
+            border-radius: 3%;
+
+            box-shadow: 0px 5px 10px $color-powderblue, 0px 0px 5px $color-cinnabar inset;
+
+            padding: 1.25rem;
+
+            .car-img {
+                filter: invert(100%);
+                width: 15rem;
+                height: auto;
+            }
+
+            .info {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+
+                color: $color-cream;
+                font-size: 1.25rem;
+                font-weight: bold;
+
+                border-top: 3px solid $color-powderblue;
+
+                padding-top: 1rem;
+
+                span:nth-child(2) {
+                    color: $color-lightblue
+                }
+            }
+        }
+    }
+}

@@ -36,7 +36,7 @@ const createAluguel = (req, res) => {
         res.json(erro);
         return;
     }
-    const sql = "INSERT INTO aluguel (placa, cpf, reserva, retirada, devolucao, subtotal) VALUES (?,?,?,?,?,?)";
+    const sql = "INSERT INTO Aluguel (placa, cpf, reserva, retirada, devolucao, subtotal) VALUES (?,?,?,?,?,?)";
     if (!subtotal) {
         con.query(sql, [placa, cpf, reserva, retirada, devolucao, 0], (err, result) => {
             if (err) {
@@ -113,7 +113,7 @@ const updateAluguel = (req, res) => {
         return;
     }
     if (!subtotal) {
-        const sql = "UPDATE aluguel SET placa = ?, cpf = ?, reserva = ?, retirada = ?, devolucao = ? WHERE id = ?";
+        const sql = "UPDATE Aluguel SET placa = ?, cpf = ?, reserva = ?, retirada = ?, devolucao = ? WHERE id = ?";
         con.query(sql, [placa, cpf, reserva, retirada, devolucao, id], (err, result) => {
             if (err) {
                 res.status(500).json(err).end();
@@ -126,7 +126,7 @@ const updateAluguel = (req, res) => {
             }
         });
     } else {
-        const sql = "UPDATE aluguel SET placa = ?, cpf = ?, reserva = ?, retirada = ?, devolucao = ?, subtotal = ? WHERE id = ?";
+        const sql = "UPDATE Aluguel SET placa = ?, cpf = ?, reserva = ?, retirada = ?, devolucao = ?, subtotal = ? WHERE id = ?";
         con.query(sql, [placa, cpf, reserva, retirada, devolucao, subtotal, id], (err, result) => {
             if (err) {
                 res.status(500).json(err).end();
@@ -142,7 +142,7 @@ const updateAluguel = (req, res) => {
 }
 
 const deleteAluguel = (req, res) => {
-    const sql = "DELETE FROM aluguel WHERE id = ?";
+    const sql = "DELETE FROM Aluguel WHERE id = ?";
     con.query(sql, [req.params.id], (err, result) => {
         if (err) {
             res.status(500).json(err).end();
