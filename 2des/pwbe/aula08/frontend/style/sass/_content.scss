@@ -20,6 +20,11 @@ main {
 
             padding: 1.25rem;
 
+            .image-container {
+                display: flex;
+                justify-content: center;
+            }
+
             .car-img {
                 filter: invert(100%);
                 width: 15rem;
