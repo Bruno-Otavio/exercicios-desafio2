@@ -1,10 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 
-const PlayLists = () => {
+const PlayCard = ({ image, title, author }) => {
   return (
     <View style={styles.container}>
-      <View></View>
+        <Image
+            source={{ uri: {image} }}
+        />
     </View>
   );
 }
@@ -16,8 +18,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-
 });
 
-export default PlayLists;
+export default PlayCard;
 
