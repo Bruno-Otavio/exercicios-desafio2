@@ -7,6 +7,7 @@ const PlayCard = ({ image, title, author }) => {
         <Image
             source={{ uri: {image} }}
         />
+        <Text style={styles.title}>{title}</Text>
     </View>
   );
 }
@@ -17,6 +18,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#FEFAF6',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  title: {
+    fontSize: 17,
   },
 });
 
