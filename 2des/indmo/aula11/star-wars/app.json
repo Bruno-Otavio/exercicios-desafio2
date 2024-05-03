@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "escuta-ai",
-    "slug": "escuta-ai",
+    "name": "star-wars",
+    "slug": "star-wars",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,16 +21,10 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.brunootavio.escutaai"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "1ff61e46-f52d-462c-9c98-9cba4b94ba8d"
-      }
     }
   }
 }
