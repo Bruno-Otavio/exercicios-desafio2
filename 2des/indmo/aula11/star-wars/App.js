@@ -3,6 +3,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
+import DarthVader from './screens/DarthVader';
+import Saga1 from './screens/Saga1';
+import Saga2 from './screens/Saga2';
+import Saga3 from './screens/Saga3';
+
 const Tab = createMaterialBottomTabNavigator();
 
 export default function App() {
